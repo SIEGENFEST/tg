@@ -1,0 +1,56 @@
+{
+  "name": "thermo-go",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "RikaSugisawa",
+    "email": "tjj.rikap@gmail.com",
+    "url": "https://rika.tech/"
+  },
+  "repository": "https://github.com/RikaSugisawa/thermodynamics-calculation.git",
+  "contributors": [
+    "RikaSugisawa",
+    "lisc17",
+    "jiang-h17",
+    "zqm980904",
+    "lvl17",
+    "zhangyouchi"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "d3": "^5.14.2",
+    "fade": "^0.2.0",
+    "material-icons": "^0.3.1",
+    "mathjax-node": "^2.1.1",
+    "tslib": "^1.10.0",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-material": "^1.0.0-beta-15",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.2.0",
+    "vue-slider-component": "^3.0.43",
+    "echarts": "latest"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
+    "@types/d3": "^5.7.2",
+    "@types/echarts": "^4.4.2",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "node-sass": "^4.13.0",
+    "reflect-metadata": "^0.1.13",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.2"
+  }
+}
