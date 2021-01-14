@@ -14,6 +14,10 @@ import PhaseEquilibriumExample from './views/PhaseEquilibriumExample.vue'
 import Mixture_Calculator from "@/views/Mixture_Calculator.vue";
 import Mixture_Diagram from "@/views/Mixture_Diagram.vue";
 import AboutUs from './views/AboutUs.vue'
+
+import Math_fund from './views/math_fund.vue'
+
+
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 // import LocalTest from './views/LocalTest.vue'
 
@@ -26,6 +30,19 @@ export const pages: MenuItem[] = [
     name: 'Home',
     component: Home
   },
+  {
+    icon:'pure',
+    name: 'Fundamental',
+    path: 'fund',
+    children:[
+      {
+        path: 'math-fund',
+        name: 'Math Fundamentals',
+        component: Math_fund,
+      }
+    ]
+
+  }
   {
     icon: 'pure',
     name: 'Pure substance',
