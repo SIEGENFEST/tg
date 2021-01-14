@@ -16,7 +16,7 @@
                         :to="'component' in page?page.path:''"
                         :md-expand="!('component' in page)"
                         @click="'component' in page && (showNavigation=false)">
-            <md-icon v-if="page.icon"><img :src="'/img/svg/'+page.icon+'.svg'" :alt="page.icon"/></md-icon>
+            <md-icon v-if="page.icon"><img :src="'../public/img/svg/'+page.icon+'.svg'" :alt="page.icon"/></md-icon>
             <span class="md-list-item-text">{{page.name}}</span>
             <md-list class="list-secondary" v-if="!('component' in page)" slot="md-expand">
               <md-list-item v-for="p in page.children"
@@ -25,7 +25,7 @@
                             @click="'component' in p && (showNavigation=false)"
                             class="">
                 <md-icon v-if="p.icon">
-                  <img :src="'/img/svg/'+p.icon+'.svg'"
+                  <img :src="'../public/img/svg/'+p.icon+'.svg'"
                        :alt="p.icon"/></md-icon>
                 <span style="flex-grow: 1">{{p.name}}</span>
                 <md-list class="list-secondary" v-if="!('component' in p)" slot="md-expand">

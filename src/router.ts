@@ -136,7 +136,7 @@ export interface ParentMenu {
   children: MenuItem[]
 }
 
-export interface SubMenu extends RouteConfig {
+export interface SubMenu  {
   icon?: string
 }
 

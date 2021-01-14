@@ -22,7 +22,7 @@
       </md-tab>
 
       <md-tab id="third" md-label="Outline">
-        <img src="/img/OutlineOfEOS.jpg" alt="OutlineOfEOS"/>
+        <img src="../../public/img/OutlineOfEOS.jpg" alt="OutlineOfEOS"/>
       </md-tab>
     </md-tabs>
   </div>

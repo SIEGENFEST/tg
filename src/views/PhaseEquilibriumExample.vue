@@ -97,7 +97,7 @@
                         \gamma_2=\gamma_2(x_1)
                     </math>
                     Draw the curve:
-                    <img src="/img/EXhuoduxishu.png" alt="EXhuoduxishu"/>
+                    <img src="../../public/img/EXhuoduxishu.png" alt="EXhuoduxishu"/>
                     Assuming that:<br>
                     1. The vapor phase is an ideal gas<br>
                     2. Saturated vapor of pure liquid is an ideal gas<br>
@@ -113,7 +113,7 @@
                         y_1=\frac{p_1^{sat}x_1\gamma_1}{p}
                     </math>
                     Draw the curve:
-                    <img src="/img/PhaseGraphExample.png" alt="PhaseGraphExample"/>
+                    <img src="../../public/img/PhaseGraphExample.png" alt="PhaseGraphExample"/>
                 </P>
             </md-step>
         </md-steppers>

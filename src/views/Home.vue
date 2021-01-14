@@ -1,7 +1,7 @@
 <template>
   <div>
     <md-empty-state
-      md-icon="/img/favicon.svg"
+      md-icon="../../public/img/favicon.svg"
       md-label="Home page"
       md-description="Click the Maxwell monster to open the menu!"
       ref="elem"

@@ -116,7 +116,7 @@
                 , you can construct a
                 process like this:
                 <br>
-                <img src="\img\HS_Cal.png"/>
+                <img src="../../public/img/HS_Cal.png"/>
                 <br>
                 Note that
                 <Math inline="true">\small -\Delta H_1, -\Delta S_1, \Delta H_2, \Delta S_2</Math>

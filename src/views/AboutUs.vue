@@ -1,7 +1,7 @@
 <template>
   <div>
     <div align="center">
-      <img src="/img/app.png" height="462" width="566"/>
+      <img src="../../public/img/app.png" height="462" width="566"/>
     </div>
     <audio autoplay>
       <source src="../../public/audio/hehe.mp3" type="audio/mp3">
