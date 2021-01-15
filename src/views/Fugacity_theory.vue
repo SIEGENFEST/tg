@@ -5,7 +5,7 @@
                      :md-done.sync="first">
                 <p>For close system with pure substance:</p>
                 <p>
-                    <Math>dG=d\mu=-SdT+Vdp</Math>
+                    <math>dG=d\mu=-SdT+Vdp</math>
                     where G-Molar Gibbs free energy,
                     <math inline="true">\mu</math>
                     -Chemical potential, S-molar entropy,

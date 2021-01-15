@@ -16,7 +16,7 @@ import Mixture_Diagram from "@/views/Mixture_Diagram.vue";
 import AboutUs from './views/AboutUs.vue'
 
 import Math_fund from './views/math_fund.vue'
-
+import B_c_sys from './views/bas_con_sys.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 // import LocalTest from './views/LocalTest.vue'
@@ -32,17 +32,28 @@ export const pages: MenuItem[] = [
   },
   {
     icon:'pure',
-    name: 'Fundamental',
+    name: '0 Fundamentals',
     path: 'fund',
     children:[
       {
         path: 'math-fund',
-        name: 'Math Fundamentals',
+        name: '0.1 Math Fundamentals',
         component: Math_fund,
-      }
-    ]
+      },
+      {
+        path: 'bas-con',
+        name: '0.2 Basic Concepts',
+        children:[
+          {
+            path: 'sys',
+            name: '0.2.1 System and Boundary',
+            component: B_c_sys,
+          },
+        ],
+      },
+    ],
 
-  }
+  },
   {
     icon: 'pure',
     name: 'Pure substance',
@@ -58,7 +69,7 @@ export const pages: MenuItem[] = [
           {
             path: 'eos-id-vdw-rk',
             name: 'Cubic EOS',
-            component: EOS_ID_VDW_RK
+            component: EOS_ID_VDW_RK,
           },
           {
             path: 'virial-eos',
