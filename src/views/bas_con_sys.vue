@@ -35,7 +35,7 @@
             <md-step id="third" md-label="习题" md-description ="" :md-done.sync="third">
                 <div>
                     <h4>1. 请分析下列哪些系统是封闭系统/开放系统/孤立系统</h4>
-                    <img src="../../public/img/b_c_sys1.png" alt="" class="pic"/>
+                    <img src="../../public/img/fund/b_c_sys1.png" alt="" class="pic"/>
                     <p>
                         1.液态水
                     </p>
@@ -46,7 +46,7 @@
                         2.液态水+水蒸气
                     </p>
                     <md-button :md-ripple="false" @click="wrong(21)"><span :class="{wr:r===21}"> 1. 开放系统</span></md-button>
-                    <md-button :md-ripple="false" @click="right(2)" ><span :class="{ri:k===2&&show===index}">2. 封闭系统</span></md-button>
+                    <md-button :md-ripple="false" @click="right(2)" ><span :class="{ri:k===2}">2. 封闭系统</span></md-button>
                     <md-button :md-ripple="false" @click="wrong(22)"><span :class="{wr:r===22}">3. 孤立系统</span></md-button>
                     <p>
                         3.汞柱
@@ -64,11 +64,11 @@
                         注：氦气在玻璃中的扩散系数<math inline=1>D≈10^{-8}cm^2/s</math>,玻璃壁厚L≈0.2cm
                     </p>
                     <md-button class="md-primary" @click="show()">See Answer</md-button>
-                    <div v-show="sh">
+                    <p v-show="sh">
                         答案：<br>
                         可能是开放系统也可能是封闭系统，由研究的时间长短决定。<br>
                         短时间内，气体通过玻璃扩散的量与气体总量相比可以忽略，可以认为是封闭系统；而在足够长的时间下，氦气的扩散不可忽略，系统为开放系统。
-                    </div>
+                    </p>
                 </div>
 
                 <md-button class="md-raised md-primary" @click="setDone('third','third')">OK</md-button>

@@ -45,7 +45,7 @@
                         对于定义域为x-y平面上一块面积为D、周长为C的区域的函数<math inline="true">z=f(x,y)</math>，其微分表示为<math inline="true">dz=Mdx+Ndy</math><br>得到格林公式：
                         <math>\oint_C(Mdx+Ndy)=\iint_D\lbrack{\left(\frac{\partial N}{\partial x}\right)}_y-{\left(\frac{\partial M}{\partial y}\right)}_x\rbrack dxdy</math>
                     </p>
-                    <img class="pic" src="../../public/img/math1.png"/>
+                    <img class="pic" src="../../public/img/fund/math1.png"/>
                     <h3>推论</h3>
                     <p>
                         1，z函数有全微分的充要条件为： <math>{\left(\frac{\partial M}{\partial y}\right)}_x={\left(\frac{\partial N}{\partial x}\right)}_y</math>

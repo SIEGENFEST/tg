@@ -17,8 +17,11 @@ import AboutUs from './views/AboutUs.vue'
 
 import Math_fund from './views/math_fund.vue'
 import B_c_sys from './views/bas_con_sys.vue'
+import B_c_ig from './views/bas_con_ig.vue'
+import B_c_is from './views/bas_con_is.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
+import { component } from 'vue/types/umd'
 // import LocalTest from './views/LocalTest.vue'
 
 Vue.use(Router);
@@ -48,6 +51,16 @@ export const pages: MenuItem[] = [
             path: 'sys',
             name: '0.2.1 System and Boundary',
             component: B_c_sys,
+          },
+          {
+            path: 'ig',
+            name:' 0.2.2 Ideal Gas',
+            component: B_c_ig,
+          },
+          {
+            path:'is',
+            name:'0.2.3 Ideal Solution',
+            component: B_c_is,
           },
         ],
       },
