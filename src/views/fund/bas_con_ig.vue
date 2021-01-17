@@ -1,6 +1,6 @@
 <template>
     <div>
-        <md-steppers :md-active-step.sync="active" md-vertical="true" >
+        <md-steppers :md-active-step.sync="active" md-vertical >
             <md-step id="first" md-label="0.2.2 Ideal Gas" md-description ="" :md-done.sync="first">
                 <p>
                     这部分将介绍理想气体的定义和性质。
@@ -8,7 +8,7 @@
 
                 <md-button class="md-raised md-primary" @click="setDone('first','second')">Let's go!</md-button>
             </md-step>
-            <md-step id="second" md-label="定义" md-description ="" :md-done.sync="second">
+            <md-step id="second" md-label="0.2.2.1 定义" md-description ="" :md-done.sync="second">
                 <div>
                     <p>
                         从微观和宏观角度分别定义理想气体。两种定义等价，运用气体分子运动论可以从微观角度定义导出宏观角度定义。<br>
@@ -25,7 +25,7 @@
                         3. 气体分子和容器壁以及气体分子之间的碰撞都是完全弹性的；<br>
                         4. 气体分子间的作用力忽略不计。<br>
                         满足以上条件的气体即为理想气体。<br><br>
-                        注意：
+                        注意：<br>
                         1. 理想气体并不存在，而是科学抽象。实际气体在压力趋近于0的情况下，气体性质趋近于理想气体，符合理想气体状态方程。<br>
                         2. 在常温常压下，许多气体可以近似视为理想气体。允许使用理想气体状态方程的压力范围取决于气体种类和要求的计算精度。<br>
                         3. 对理想气体状态方程加以适当修正，就能对实际气体进行描述。相关内容可见2.1真实气体部分。<br>
@@ -35,7 +35,7 @@
 
                 <md-button class="md-raised md-primary" @click="setDone('second','third')">OK</md-button>
             </md-step>
-            <md-step id="third" md-label="理想气体性质" md-description ="" :md-done.sync="third">
+            <md-step id="third" md-label="0.2.2.2 理想气体性质" md-description ="" :md-done.sync="third">
                 <div>
                     <p>
                         注意，以下性质只适用于理想气体。
@@ -52,7 +52,7 @@
                         同理，理想气体等压热容也只是温度的函数，与等容热容有关系：<math inline=1>C_P=C_V+R</math>
                     </p>
                     <h3>3. 理想气体PVT图</h3>
-                    <img src="../../public/img/fund/b_c_ig1.png" alt=""/>
+                    <img src="../../../public/img/fund/b_c_ig1.png" alt=""/>
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('third','third')">OK</md-button>
             </md-step>
@@ -86,7 +86,7 @@
 
  <style lang="scss" scoped>
     .md-steppers {
-        width: 700px;
+        max-width: 700px;
         font-size: 15px;
         line-height: 25px;
         font-family: sans-serif;

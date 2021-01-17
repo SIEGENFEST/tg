@@ -15,10 +15,16 @@ import Mixture_Calculator from "@/views/Mixture_Calculator.vue";
 import Mixture_Diagram from "@/views/Mixture_Diagram.vue";
 import AboutUs from './views/AboutUs.vue'
 
-import Math_fund from './views/math_fund.vue'
-import B_c_sys from './views/bas_con_sys.vue'
-import B_c_ig from './views/bas_con_ig.vue'
-import B_c_is from './views/bas_con_is.vue'
+import Math_fund from './views/fund/math_fund.vue'
+import B_c_sys from './views/fund/bas_con_sys.vue'
+import B_c_ig from './views/fund/bas_con_ig.vue'
+import B_c_is from './views/fund/bas_con_is.vue'
+import Purpose from './views/fund/purpose.vue'
+
+import Postulates from './views/basic/postulates.vue'
+import Law_exam from './views/basic/laws_example.vue'
+
+import Pure_g_corre from './views/pureSub/pure_g_corre.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 import { component } from 'vue/types/umd'
@@ -64,8 +70,47 @@ export const pages: MenuItem[] = [
           },
         ],
       },
+      {
+        path: 'pur',
+        name: '0.3 Purpose',
+        component: Purpose,
+      },
     ],
-
+  },
+  {
+    icon: 'intro',
+    name: '1 Basics',
+    path: 'basics',
+    children:[
+      {
+        path: 'post',
+        name: '1.1 Postulates',
+        component:Postulates,
+      },
+      {
+        path: 'laws',
+        name: '1.2 Laws of Thermodynamics',
+        children:[
+          {
+            path: 'first-exam',
+            name: 'Examples',
+            component: Law_exam,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: 'pure',
+    name: '2 Pure Substance',
+    path: 'pu-sub',
+    children:[
+      {
+        path:'corre',
+        name:'2.1.3.1 Corresponding States',
+        component: Pure_g_corre,
+      },
+    ],
   },
   {
     icon: 'pure',

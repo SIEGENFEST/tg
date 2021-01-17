@@ -1,6 +1,6 @@
 <template>
     <div>
-        <md-steppers :md-active-step.sync="active" md-vertical="true" >
+        <md-steppers :md-active-step.sync="active" md-vertical >
             <md-step id="first" md-label="0.2.1 System and Boundary" md-description ="" :md-done.sync="first">
                 <p>
                     这部分将介绍基本概念，系统和边界。划分系统和边界是进行热力学分析的基础。
@@ -27,15 +27,16 @@
                     2.	封闭系统：体系和环境之间只有能量而无物质的交换，但是系统内可以因为发生化学反应而改变其组成。<br>
                     3.	开放系统：体系与环境之间可以有能量和物质的交换。这种交换可通过多孔壁、相界面或想象中的几何表面进行。<br>
                     <br>注意：<br>
-                    1. <span class="em">绝对孤立的系统是不存在的。</span>但是有些情况下适当近似，忽略掉某些次要因素，便可以将系统视为孤立的。如一个保温效果良好的暖水瓶及其内含物便可以视为一个孤立系统。<br>
-                    2. <span class="em">系统是人为划定的。</span>同一个问题，由于考虑的角度不同，选择的系统可能不同。在处理热力学问题时，选择系统应该以解决问题的方便为原则。
+                    1. <span class="em">绝对孤立的系统是不存在的。</span>但是有些情况下适当近似，忽略掉某些次要因素，便可以将系统视为孤立。如一个保温效果良好的暖水瓶及其内含物便可以视为一个孤立系统。<br>
+                    2. <span class="em">系统是人为划定的。</span>同一个问题，由于考虑的角度不同，选择的系统可能不同。在处理热力学问题时，选择系统应该以解决问题的方便为原则。<br>
+                    3. 简单系统指没有内部边界、没有外场作用力和惯性的系统。
                 </p>
                 <md-button class="md-raised md-primary" @click="setDone('second','third')">OK</md-button>
             </md-step>
             <md-step id="third" md-label="习题" md-description ="" :md-done.sync="third">
                 <div>
                     <h4>1. 请分析下列哪些系统是封闭系统/开放系统/孤立系统</h4>
-                    <img src="../../public/img/fund/b_c_sys1.png" alt="" class="pic"/>
+                    <img src="../../../public/img/fund/b_c_sys1.png" alt="" class="pic"/>
                     <p>
                         1.液态水
                     </p>
@@ -119,14 +120,14 @@
 
  <style lang="scss" scoped>
     .md-steppers {
-        width: 700px;
+        max-width: 700px;
         font-size: 15px;
         line-height: 25px;
         font-family: sans-serif;
         text-align: justify;
     }
     .pic{
-        width:300px;
+        max-width:300px;
     }
     .em{
         color: rgb(219, 22, 22);

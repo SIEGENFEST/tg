@@ -1,6 +1,6 @@
 <template>
     <div>
-        <md-steppers :md-active-step.sync="active" md-vertical="true" >
+        <md-steppers :md-active-step.sync="active" md-vertical >
             <md-step id="first" md-label="0.1 Math Fundamentals" md-description ="some math skills needed " :md-done.sync="first">
                 <p>
                     这部分将简要介绍一些数学技巧，包括微积分基础内容、欧拉定理和勒让德变换。在之后的公式推导中，我们将应用这些内容。
@@ -45,7 +45,7 @@
                         对于定义域为x-y平面上一块面积为D、周长为C的区域的函数<math inline="true">z=f(x,y)</math>，其微分表示为<math inline="true">dz=Mdx+Ndy</math><br>得到格林公式：
                         <math>\oint_C(Mdx+Ndy)=\iint_D\lbrack{\left(\frac{\partial N}{\partial x}\right)}_y-{\left(\frac{\partial M}{\partial y}\right)}_x\rbrack dxdy</math>
                     </p>
-                    <img class="pic" src="../../public/img/fund/math1.png"/>
+                    <img class="pic" src="../../../public/img/fund/math1.png"/>
                     <h3>推论</h3>
                     <p>
                         1，z函数有全微分的充要条件为： <math>{\left(\frac{\partial M}{\partial y}\right)}_x={\left(\frac{\partial N}{\partial x}\right)}_y</math>
@@ -135,13 +135,13 @@
 
  <style lang="scss" scoped>
     .md-steppers {
-        width: 700px;
+        max-width: 700px;
         font-size: 15px;
         line-height: 25px;
         font-family: sans-serif;
         text-align: justify;
     }
     .pic{
-        width:300px;
+        max-width:300px;
     }
 </style>
