@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-/dist
+
 stepper.vue
 # local env files
 .env.local
