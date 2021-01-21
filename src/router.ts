@@ -23,6 +23,7 @@ import Purpose from './views/fund/purpose.vue'
 
 import Postulates from './views/basic/postulates.vue'
 import Law_exam from './views/basic/laws_example.vue'
+import Firstlaw from './views/basic/firstlaw.vue'
 
 import Pure_g_corre from './views/pureSub/pure_g_corre.vue'
 
@@ -92,8 +93,13 @@ export const pages: MenuItem[] = [
         name: '1.2 Laws of Thermodynamics',
         children:[
           {
+            path: 'firstlaw',
+            name: '1.2.1 First Law',
+            component: Firstlaw,
+          },
+          {
             path: 'first-exam',
-            name: 'Examples',
+            name: 'First Law-Examples',
             component: Law_exam,
           },
         ],
