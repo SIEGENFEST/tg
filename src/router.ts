@@ -19,11 +19,13 @@ import Math_fund from './views/fund/math_fund.vue'
 import B_c_sys from './views/fund/bas_con_sys.vue'
 import B_c_ig from './views/fund/bas_con_ig.vue'
 import B_c_is from './views/fund/bas_con_is.vue'
+import B_c_ref from './views/fund/bas_con_ref.vue'
 import Purpose from './views/fund/purpose.vue'
 
 import Postulates from './views/basic/postulates.vue'
-import Law_exam from './views/basic/laws_example.vue'
+import Firstlaw_exam from './views/basic/laws_example.vue'
 import Firstlaw from './views/basic/firstlaw.vue'
+import Secondlaw from './views/basic/secondlaw.vue'
 
 import Pure_g_corre from './views/pureSub/pure_g_corre.vue'
 
@@ -69,6 +71,11 @@ export const pages: MenuItem[] = [
             name:'0.2.3 Ideal Solution',
             component: B_c_is,
           },
+          {
+            path:'ref',
+            name:'0.2.4 Reference State',
+            component: B_c_ref,
+          },
         ],
       },
       {
@@ -100,7 +107,12 @@ export const pages: MenuItem[] = [
           {
             path: 'first-exam',
             name: 'First Law-Examples',
-            component: Law_exam,
+            component: Firstlaw_exam,
+          },
+          {
+            path: 'secondlaw',
+            name: '1.2.2 Second Law',
+            component: Secondlaw,
           },
         ],
       },

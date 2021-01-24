@@ -104,7 +104,8 @@
                         </strong><br>
                         <img src="../../../public/img/basic/first_exam3.png" alt="" class="piclarge">
                     </p>
-                    <p>
+                    <md-button class="md-primary" @click="show('s10')">See Answer</md-button>
+                    <p v-show="s10">
                         解析：<br>
                         将A容器内的气体和B容器内的气体视为复合系统(A+B)，由封闭系统热力学第一定律得到方程：
                         <math>△\underline E_{A+B}=Q_{A+B}+W_{A+B}</math>
@@ -142,17 +143,53 @@
                         同理，得到：
                         <math>T_{A,f}=273K,\;T_{B,f}=354K</math>
                     </p>
+                    <md-button class="md-primary" @click="hide('s10')" v-show="s10">Close Answer</md-button>
                 </div>
-
                 <md-button class="md-raised md-primary" @click="setDone('third','fourth')">OK</md-button>
             </md-step>
             <md-step id="fourth" md-label="Example 4" md-description ="储罐放水" :md-done.sync="fourth">
+                <div>
+                    <p>
+                        如图所示，右侧储水罐体积<math inline=1>V=4m^3</math>，含有<math inline=1>V=2m^3</math>的不可压缩液体，上方为1bar，280K的气体。储罐通过管道与左侧空气罐连通，空气罐内充满100bar，300K的空气。阀门1、2都处于关闭状态。<br>
+                        打开阀门1，当右侧储罐内压力达到5bar时，打开阀门2使水以<math inline=1>u=0.2m^3/s</math>的速度流出，并保持储罐内5bar的气体压力。气体可视为理想，恒压热容为20.9J/(mol·K)。问：<br>
+                        <strong>
+                            1. 储罐压力刚达到5bar时空气温度为多少？<br>
+                            2. 储罐中液体刚排空时空气温度为多少？<br>
+                        </strong>
+                    </p>
+                    <img src="../../../public/img/basic/first_exam4.png" alt="" class="piclarge"><br>
+                    <md-button class="md-primary" @click="show('s11')">See Answer</md-button>
+                    <p>
+                        解析：<br>
+                        <strong>1. 恒容加压过程</strong><br>
+                        将储罐中液体上方空气视为简单开放系统。简单开放系统的热力学第一定律方程：
+                        <math>d\underline U=\delta Q_{\sigma}+\delta W_{\sigma}+H_{in}\delta n_{in}-H_{out}\delta n_{out}</math>
+                        系统绝热，<math inline=1>\delta Q_{\sigma}=0</math>；恒容，<math inline=1>\delta W_{\sigma}=0</math>；无出料，<math inline=1>\delta n_{out}=0</math>；对广度U微分得到：
+                        <math>d\underline U=d(NU)=UdN+NdU</math>
+                        于是得到简化的方程：
+                        <math>NdU+UdN=H_{in}\delta n_{in}=H_{in}dN</math>
+                        积分并结合理想气体状态方程得到：
+                        <math class="em">\frac{H_{in}-U_i}{H_{in}-U}=\fracN{N_i}=\frac{T_iP}{P_iT}</math>
+                        以<math inline=1>T_0</math>为参考态：
+                        <math>H_{in}=C_p(T_{in}-T_0)+H_0,\;U=C_V(T-T_0)+U_0,\;C_p=C_V+R</math>
+                        带回上式，解得T=382K。<br><br>
 
+                        <strong>2. 恒压放水过程</strong><br>
+                        依然将储罐中液体上方空气视为简单开放系统。<br>
+                        系统绝热，<math inline=1>\delta Q_{\sigma}=0</math>；无出料，<math inline=1>\delta n_{out}=0</math>；恒压，对做功进行微分：
+                        <math>\delta W_{\sigma}=-pd\underline V=-pNdV-pVdN</math>
+                        于是得到简化的方程：
+                        <math>UdN+NdU=-pNdV-pVdN+H_{in}dN</math>
+                        积分，且由H=U+pV得到：
+                        <math>\frac{H_{in}-H_i}{H_{in}-H}=\fracN{N_i}=\frac{T_{in}-T_i}{T_{in}-T}</math>
+                        注意，其中<math inline=1>T_i=382K</math><br>
+                        代入数据后得到T=336K。
+                    </p>
+
+                </div>
                 <md-button class="md-raised md-primary" @click="setDone('fourth','fifth')">OK</md-button>
             </md-step>
-            <md-step id="fifth" md-label="" md-description ="" :md-done.sync="fifth">
-
-                <md-button class="md-raised md-primary" @click="setDone('fifth','fifth')">OK</md-button>
+            
             </md-step>
 
             </md-steppers>
@@ -188,6 +225,7 @@
             s7: false,
             s8: false,
             s9: false,
+            s10:false,
             h1: true,
             h2: true,
             h3: true,
@@ -232,7 +270,7 @@
         max-width:300px;
     }
     .piclarge{
-        max-width: 500px;
+        max-width: 450px;
     }
     .em{
         color: rgb(219, 22, 22);
