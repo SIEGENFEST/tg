@@ -83,7 +83,7 @@
                     </p>
                 </div>
 
-                <md-button class="md-raised md-primary" @click="setDone('fourth','fifth')">OK</md-button>
+                <md-button class="md-raised md-primary" @click="setDone('fourth','fourth')">OK</md-button>
             </md-step>
             
             </md-steppers>

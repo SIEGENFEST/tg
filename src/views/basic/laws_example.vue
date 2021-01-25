@@ -159,7 +159,7 @@
                     </p>
                     <img src="../../../public/img/basic/first_exam4.png" alt="" class="piclarge"><br>
                     <md-button class="md-primary" @click="show('s11')">See Answer</md-button>
-                    <p>
+                    <p v-show="s11">
                         解析：<br>
                         <strong>1. 恒容加压过程</strong><br>
                         将储罐中液体上方空气视为简单开放系统。简单开放系统的热力学第一定律方程：
@@ -185,12 +185,12 @@
                         注意，其中<math inline=1>T_i=382K</math><br>
                         代入数据后得到T=336K。
                     </p>
-
+                    <md-button class="md-primary" @click="hide('s11')" v-show="s11">Close Answer</md-button>
                 </div>
-                <md-button class="md-raised md-primary" @click="setDone('fourth','fifth')">OK</md-button>
+                <md-button class="md-raised md-primary" @click="setDone('fourth','fourth')">OK</md-button>
             </md-step>
             
-            </md-step>
+            
 
             </md-steppers>
             
@@ -226,6 +226,7 @@
             s8: false,
             s9: false,
             s10:false,
+            s11:false,
             h1: true,
             h2: true,
             h3: true,

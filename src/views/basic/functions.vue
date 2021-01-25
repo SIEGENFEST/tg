@@ -167,7 +167,24 @@
                         <math>
                             G_{Tp}=G_{pT}={\left(\frac{\partial{\left({\displaystyle\frac{\partial G}{\partial p}}\right)}_T}{\partial T}\right)}_p=(\frac{\partial V}{\partial T})_p=V\alpha_p
                         </math>
+                        <br>
+                        <span class="em">注意：</span>求偏导时要注意是强度性质还是广度性质，并且注意下标；下标不同结果也可能不同。<br><br>
+                        示例：对于单组分简单系统，求以下三个偏导的值：
+                        <math>(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V},\;(\frac{\partial U}{\partial N})_{S,V},\;(\frac{\partial U}{\partial N})_{\underline S,\underline V}</math>
                     </p>
+                        <md-button class="md-primary" @click="show('s1')">See Answer</md-button><br>
+                        <div v-show="s1">
+                            由<math inline=1>d\underline U=Td\underline S-pd\underline V+ \mu dN</math>得到：
+                            <math>(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V}=\mu</math>
+                            由<math inline=1>dU=TdS-pdV</math>得到：
+                            <math>(\frac{\partial U}{\partial N})_{S,V}=0</math>
+                            又由关系：
+                            <math>\mu=(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V}=(\frac{\partial NU}{\partial N})_{\underline S,\underline V}=U+N(\frac{\partial U}{\partial N})_{\underline S,\underline V}</math>
+                            得到：
+                            <math>(\frac{\partial U}{\partial N})_{\underline S,\underline V}=\frac{\mu-U}N \neq 0</math>
+                        </div>
+                        <md-button class="md-primary" @click="hide('s1')" v-show="s1">Close Answer</md-button>
+                    
                     <h3>麦克斯韦(Maxwell)关系</h3>
                     <p>
                         由全微分相关性质，可以由热力学关系式得到麦克斯韦关系：

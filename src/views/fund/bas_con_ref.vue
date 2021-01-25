@@ -13,7 +13,7 @@
                     2. 参比态的选择完全是随意的，可以选择任意的平衡态为参比态；<br>
                     3，习惯上，按照一定规则选取参比态；通常以该物质在熔点的饱和液体或正常沸点的饱和液体为参比态。为了计算方便，无论温度如何选择，参比态的压力<math inline=1>p_0</math>都应该足够低，这样才能将理想气体状态的热容用于过热蒸汽的计算中。
                 </div>
-                <md-button class="md-raised md-primary" @click="setDone('second','third')">OK</md-button>
+                <md-button class="md-raised md-primary" @click="setDone('second','second')">OK</md-button>
             </md-step>
             
 

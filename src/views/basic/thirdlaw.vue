@@ -7,7 +7,7 @@
                     绝对零度（0K）时，所有纯物质的完美晶体的熵值为零；绝对零度不可达到。
 
                 </div>
-                <md-button class="md-raised md-primary" @click="setDone('first','second')">OK</md-button>
+                <md-button class="md-raised md-primary" @click="setDone('first','first')">OK</md-button>
             </md-step>
             
 

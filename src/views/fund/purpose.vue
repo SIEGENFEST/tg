@@ -35,7 +35,7 @@
                     </p>
                 </div>
                 
-                <md-button class="md-raised md-primary" @click="setDone('third','fourth')">OK</md-button>
+                <md-button class="md-raised md-primary" @click="setDone('third','third')">OK</md-button>
             </md-step>
             
 
