@@ -26,6 +26,8 @@ import Postulates from './views/basic/postulates.vue'
 import Firstlaw_exam from './views/basic/laws_example.vue'
 import Firstlaw from './views/basic/firstlaw.vue'
 import Secondlaw from './views/basic/secondlaw.vue'
+import Thirdlaw from './views/basic/thirdlaw.vue'
+import Functions from './views/basic/functions.vue'
 
 import Pure_g_corre from './views/pureSub/pure_g_corre.vue'
 
@@ -114,7 +116,17 @@ export const pages: MenuItem[] = [
             name: '1.2.2 Second Law',
             component: Secondlaw,
           },
+          {
+            path: 'thirdlaw',
+            name: '1.2.3 Third Law',
+            component: Thirdlaw,
+          },
         ],
+      },
+      {
+        path:'functions',
+        name:'1.3 Functions',
+        component:Functions,
       },
     ],
   },

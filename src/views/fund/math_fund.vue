@@ -88,10 +88,18 @@
                         <math>x=\frac{\partial(ux+vy-f)}{\partial u}\equiv\frac{\partial f'}{\partial u}</math>
                         <math>y=\frac{\partial(ux+vy-f)}{\partial v}\equiv\frac{\partial f'}{\partial v}</math>
                         其中勒让德变换f'(u,v)为：
-                        <math>f'(u,v)=ux+vy-f(x,y)</math>
+                        <math>f'(u,v)=ux+vy-f(x,y)</math><br>
+                        以<math inline=1>y^{(a)}_{bc}</math>表示对函数y进行a次勒让德变换，并对第b个和第c个变量求偏导。有以下数学关系：
+                        <math>
+                            y^{(1)}_{11}=-\frac1{y^{(0)}_{11}},\;
+                            y^{(1)}_{1i}=\frac{y^{(0)}_{1i}}{y^{(0)}_{11}},i\neq 1\\
+                            y^{(1)}_{ij}=y^{(0)}_{ij}-\frac{y^{(0)}_{1i}y^{(0)}_{1j}}{y^{(0)}_{11}},i\neq j
+                        </math>
+                        只需要给出原基础函数的偏微分关系，便可以得到其他坐标下函数的偏微分关系。
                     </p>                    
                     <h3>热力学中的应用</h3>
                     <p>
+                        该部分可参考1.3.3部分内容。
                         热力学基本方程式中，状态函数内能的微分表示为：
                         <math>dU=TdS-pdV</math>
                         对TdS项做勒让德变换得到亥姆霍兹自由能的微分：
