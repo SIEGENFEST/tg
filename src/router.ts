@@ -29,6 +29,8 @@ import Secondlaw from './views/basic/secondlaw.vue'
 import Thirdlaw from './views/basic/thirdlaw.vue'
 import Functions from './views/basic/functions.vue'
 
+import Real_gas_intro from './views/pureSub/realgasintro.vue'
+import Mul_para from './views/pureSub/mul_para.vue'
 import Pure_g_corre from './views/pureSub/pure_g_corre.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
@@ -135,6 +137,22 @@ export const pages: MenuItem[] = [
     name: '2 Pure Substance',
     path: 'pu-sub',
     children:[
+      {
+        path:'real-gas',
+        name:'2.1 Real Gas',
+        children:[
+          {
+            path:'intro',
+            name:'Introduction',
+            component: Real_gas_intro,
+          },
+          {
+            path:'mul-para',
+            name:'2.1.1',
+            component: Mul_para,
+          },
+        ],
+      },
       {
         path:'corre',
         name:'2.1.3.1 Corresponding States',

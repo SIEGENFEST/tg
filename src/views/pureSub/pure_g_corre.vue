@@ -5,7 +5,7 @@
                 <p>
                     对于实际气体，其状态方程与组成成分有关；而对不同成分的气体建立不同状态方程显然不可能，于是人们希望找到一个通用的方程。<br>
                     实验发现，如果气体的对比体积、对比压力和对比温度中有两个参数相同，则第三个也相同。这就是对比态定律。运用对比态原理，人们能够除去真实气体状态方程中的物质特性常数，从而得到描述的通用式。<br>
-                    后续2.1.3部分将继续介绍人们为进一步提高方程精度，对通用式中压缩因子Z进行的相关修正。
+                    后续部分将继续介绍人们为进一步提高方程精度，对通用式中压缩因子Z进行的相关修正。
                     
                 </p>
 
@@ -21,7 +21,7 @@
                         临界体积<math inline=1>V_c</math>：物质在临界温度、临界压力下的摩尔体积。<br>
                         以下纯物质的P-V图中，C点表示临界状态，为温度等于临界温度时P-V曲线的拐点；相关内容可见“1.3.4平衡与稳定”。
                     </p>
-                    <img src="../../../public/img/fund/b_c_co1.png" alt="" class="piclarge"/>
+                    <img src="../../../public/img/pure/b_c_co1.png" alt="" class="piclarge"/>
                     <h3>对比参数</h3>
                     <p>
                         对比参数是状态参数与临界参数的比值。<br>
@@ -81,7 +81,7 @@
                         再引入理想对比体积，得到方程：
                         <math class="em">p_rV_{ri}=ZT_r</math>
                         其中，<math inline=1>Z=Z(p_r,T_r)</math>，所以必然有<math inline=1>V_{ri}=V(p_r,T_r)</math>，即<math inline=1>(p_r,T_r,V_{ri})</math>中仅有两个变量独立。所以方程满足<math inline=1 class="em">f(p_r,T_r,V_{ri})=0</math>，为普遍化方程。<br>
-                        相关内容将在2.1.3.2部分进一步说明。
+                        
                     </p>
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('fourth','fifth')">OK</md-button>
