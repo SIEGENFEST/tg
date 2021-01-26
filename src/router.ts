@@ -148,7 +148,7 @@ export const pages: MenuItem[] = [
           },
           {
             path:'mul-para',
-            name:'2.1.1',
+            name:'2.1.1 Virial-Type EOS',
             component: Mul_para,
           },
         ],
