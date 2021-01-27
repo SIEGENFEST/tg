@@ -31,6 +31,7 @@ import Functions from './views/basic/functions.vue'
 
 import Real_gas_intro from './views/pureSub/realgasintro.vue'
 import Mul_para from './views/pureSub/mul_para.vue'
+import Cubic_eq from './views/pureSub/cubic_eq.vue'
 import Pure_g_corre from './views/pureSub/pure_g_corre.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
@@ -150,6 +151,11 @@ export const pages: MenuItem[] = [
             path:'mul-para',
             name:'2.1.1 Virial-Type EOS',
             component: Mul_para,
+          },
+          {
+            path:'cubic-eq',
+            name:'2.1.2 Cubic(vdW) EOS',
+            component: Cubic_eq,
           },
         ],
       },
