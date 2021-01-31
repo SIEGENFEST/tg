@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical>
-            <md-step id="first" md-label="1.1 Postulates" md-description ="四大基本假设" :md-done.sync="first">
+            <md-step id="first" md-label="1.1 四大基本假设" md-description ="" :md-done.sync="first">
                 <div>
                     四大基本假设是热力学的基石。本部分将对四大基本假设做简要介绍。
                 </div>

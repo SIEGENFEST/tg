@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical>
-            <md-step id="first" md-label="0.2.4 Reference State" md-description ="参比态" :md-done.sync="first">
+            <md-step id="first" md-label="0.2.4 参比态" md-description ="" :md-done.sync="first">
                 <div>
                     经典热力学并不能表示出一定条件（温度、压力）下，一个系统的热力学性质的绝对值，只能表示出一个状态与另一个状态之间热力学性质的差值。因此为了对热力学性质进行描述和比较，必须选择某种状态作为参比态。
                 </div>

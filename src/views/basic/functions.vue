@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical>
-            <md-step id="first" md-label="1.3 Functions" md-description ="" :md-done.sync="first">
+            <md-step id="first" md-label="1.3 热力学函数" md-description ="" :md-done.sync="first">
                 <div>
                     <p>
                         本部分将介绍不同坐标下描述系统的热力学关系式，并简单介绍热力学函数偏导的意义和运用。
@@ -34,9 +34,9 @@
                     <h3>吉布斯坐标系下热力学基本关系式求取</h3>
                     <p>
                         对于简单系统，应用吉布斯坐标系，可以将系统的热力学性质用内能表示：
-                        <math>\underline U=f_U(\underline S,\underline V,N_1,N_2,...,N_n)</math>
+                        <math class="ms">\underline U=f_U(\underline S,\underline V,N_1,N_2,...,N_n)</math>
                         变化得到下式：
-                        <math>\underline S=f_S(\underline U,\underline V,N_1,N_2,...,N_n)</math>
+                        <math class="ms">\underline S=f_S(\underline U,\underline V,N_1,N_2,...,N_n)</math>
                         以上两式即为热力学基本关系式。<br>
                         注意：<br>
                         1. 计算时需要确定参考态；<br>
@@ -46,13 +46,13 @@
                     <h3>全微分</h3>
                     <p>
                         对热力学基本关系式取全微分，得到：
-                        <math>d\underline U=(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N_i}d\underline S+(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N_i}d\underline V+\sum_i(\frac{\partial \underline U}{\partial N_i})_{\underline S,\underline V,N_{j\neq i}}dN_i</math>
+                        <math class="ms">d\underline U=(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N_i}d\underline S+(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N_i}d\underline V+\sum_i(\frac{\partial \underline U}{\partial N_i})_{\underline S,\underline V,N_{j\neq i}}dN_i</math>
                         联系之前推导得到的简单系统热力学关系式：
-                        <math>d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i</math>
+                        <math class="ms">d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i</math>
                         得到：
-                        <math>(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N_i}=T=g_T(\underline S,\underline V,N_1,N_2,...,N_n)</math>
-                        <math>(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N_i}=-P=g_p(\underline S,\underline V,N_1,N_2,...,N_n)</math>
-                        <math>(\frac{\partial \underline U}{\partial N_i})_{\underline S,\underline V,N_{j\neq i}}=\mu_i=g_{\mu_i}(\underline S,\underline V,N_1,N_2,...,N_n)</math>
+                        <math class="ms">(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N_i}=T=g_T(\underline S,\underline V,N_1,N_2,...,N_n)</math>
+                        <math class="ms">(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N_i}=-P=g_p(\underline S,\underline V,N_1,N_2,...,N_n)</math>
+                        <math class="ms">(\frac{\partial \underline U}{\partial N_i})_{\underline S,\underline V,N_{j\neq i}}=\mu_i=g_{\mu_i}(\underline S,\underline V,N_1,N_2,...,N_n)</math>
                         方程中<math inline=1>T,P, μ_i</math>均为强度性质，与质量无关。以上三式即为吉布斯坐标下的状态方程（理想气体状态方程、van der Waals方程等理论方程，Peng-Robinson等实际状态方程即为上述状态方程的具体形式）。
 
                     </p>
@@ -60,7 +60,7 @@
                     <p>
                         吉布斯坐标系中，<math inline=1>\underline S,\underline V, N</math>都为广度性质，是质量的一次函数。<br>
                         根据欧拉定理，得到以下积分式：
-                        <math>\underline U=\underline S(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N_i}+\underline V(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N_i}+\sum_iN_i(\frac{\partial \underline U}{\partial N_i})_{\underline S,\underline V,N_{j\neq i}}</math><math>
+                        <math class="ms">\underline U=\underline S(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N_i}+\underline V(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N_i}+\sum_iN_i(\frac{\partial \underline U}{\partial N_i})_{\underline S,\underline V,N_{j\neq i}}</math><math>
                             \underline U=T\underline S-p\underline V+\sum_iN_i\mu_i</math>
                         
                     </p>
@@ -85,31 +85,31 @@
                 <div>
                     <p>
                         已经得到，吉布斯坐标系下，系统的热力学性质可以方便地用内能表示：
-                        <math>d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i</math>
+                        <math class="ms">d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i</math>
                         但是系统的熵难以测量，于是考虑用其它坐标来表示系统的热力学性质。<br>
                         令<math inline=1>y^{(0)}=\underline U=U(\underline S,\underline V, N_1,N_2,...,N_n)</math>，微分得到：
-                        <math>dy^{(0)}=d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i</math>
+                        <math class="ms">dy^{(0)}=d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i</math>
                         一次勒让德变换得到：
-                        <math>dy^{(1)}=-\underline SdT-pd\underline V +\sum_i \mu_idN_i</math>
+                        <math class="ms">dy^{(1)}=-\underline SdT-pd\underline V +\sum_i \mu_idN_i</math>
                         定义此处<math inline=1>y^{(1)}</math>为亥姆霍兹自由能A，由欧拉定理得到：
-                        <math>\underline A=-\underline ST-p\underline V+\sum_i\mu_iN_i</math>
+                        <math class="ms">\underline A=-\underline ST-p\underline V+\sum_i\mu_iN_i</math>
                         将变量顺序改为<math inline=1>(\underline V,\underline S,N_1,N_2,...,N_n)</math>，再次进行一阶勒让德变换，得到：
-                        <math>dy^{(1)}=\underline Vdp+Td\underline S+\sum_i \mu_idN_i</math>
+                        <math class="ms">dy^{(1)}=\underline Vdp+Td\underline S+\sum_i \mu_idN_i</math>
                         定义此处<math inline=1>y^{(1)}</math>为焓H，由欧拉定理得到：
-                        <math>\underline H=p\underline V+T\underline S+\sum_i\mu_iN_i</math>
+                        <math class="ms">\underline H=p\underline V+T\underline S+\sum_i\mu_iN_i</math>
                         对<math inline=1>y^{(0)}</math>进行二阶勒让德变换得到：
-                        <math>dy^{(2)}=-\underline SdT+\underline Vdp +\sum_i \mu_idN_i</math>
+                        <math class="ms">dy^{(2)}=-\underline SdT+\underline Vdp +\sum_i \mu_idN_i</math>
                         定义此处<math inline=1>y^{(2)}</math>为吉布斯自由能G，由欧拉定理得到：
-                        <math>\underline G=-\underline ST+\underline Vp+\sum_i\mu_iN_i</math>
+                        <math class="ms">\underline G=-\underline ST+\underline Vp+\sum_i\mu_iN_i</math>
                         综上，得到不同坐标下热力学基本方程的微分形式：
-                        <math>
+                        <math class="ms">
                             d\underline U=d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i\\
                             d\underline A=-\underline SdT-pd\underline V +\sum_i \mu_idN_i\\
                             d\underline H=\underline Vdp+Td\underline S+\sum_i \mu_idN_i\\
                             d\underline G=-\underline SdT+\underline Vdp +\sum_i \mu_idN_i
                         </math>
                         积分形式：
-                        <math>
+                        <math class="ms">
                             \underline U=T\underline S-p\underline V+\sum_i\mu_iN_i\\
                             \underline A=-\underline ST-p\underline V+\sum_i\mu_iN_i\\
                             \underline H=p\underline V+T\underline S+\sum_i\mu_iN_i\\
@@ -121,7 +121,118 @@
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('fourth','fifth')">OK</md-button>
             </md-step>
-            <md-step id="fifth" md-label="1.3.4 有外场系统的热力学关系式" md-description ="" :md-done.sync="fifth">
+            <md-step id="fifth" md-label="1.3.4 偏导" md-description ="麦克斯韦关系；坐标变换" :md-done.sync="fifth">
+                <div>
+                    <h3>偏导意义</h3>
+                    <p>
+                        热力学函数对自变量的一阶偏导可以获得系统状态。<br>
+                        例如，对于简单系统：
+                        <math class="ms">(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N}=T,\;(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N}=P</math><br>
+                        二阶偏导可以获得物性。<br>
+                        例如对于单组分简单系统，使用强度性质的表达式，得到：<br>
+                        <strong>恒容热容：</strong>
+                        <math class="ms">
+                            U_{SS}=(\frac{\partial ^2 U}{\partial S^2})_V=(\frac{\partial T}{\partial S})_V=\frac T{C_V}</math>
+                        <strong>等温压缩因子：</strong>反映等温条件下，系统摩尔体积随压力变化：
+                        <math class="ms">
+                            G_{pp}=(\frac{\partial^2 G}{\partial p^2})_T=(\frac{\partial V}{\partial p})_T=-V\kappa_T
+                        </math>
+                        <strong>热膨胀系数：</strong>反应恒压条件下，系统摩尔体积随温度变化：
+                        <math class="ms">
+                            G_{Tp}=G_{pT}={\left(\frac{\partial{\left({\displaystyle\frac{\partial G}{\partial p}}\right)}_T}{\partial T}\right)}_p=(\frac{\partial V}{\partial T})_p=V\alpha_p
+                        </math>
+                        <br>
+                        <span class="em">注意：</span>求偏导时要注意是强度性质还是广度性质，并且注意下标；下标不同结果也可能不同。<br><br>
+                        示例：对于单组分简单系统，求以下三个偏导的值：
+                        <math class="ms">(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V},\;(\frac{\partial U}{\partial N})_{S,V},\;(\frac{\partial U}{\partial N})_{\underline S,\underline V}</math>
+                    </p>
+                        <md-button class="md-primary" @click="show('s1')">See Answer</md-button><br>
+                        <div v-show="s1">
+                            由<math inline=1>d\underline U=Td\underline S-pd\underline V+ \mu dN</math>得到：
+                            <math class="ms">(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V}=\mu</math>
+                            由<math inline=1>dU=TdS-pdV</math>得到：
+                            <math class="ms">(\frac{\partial U}{\partial N})_{S,V}=0</math>
+                            又由关系：
+                            <math class="ms">\mu=(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V}=(\frac{\partial NU}{\partial N})_{\underline S,\underline V}=U+N(\frac{\partial U}{\partial N})_{\underline S,\underline V}</math>
+                            得到：
+                            <math class="ms">(\frac{\partial U}{\partial N})_{\underline S,\underline V}=\frac{\mu-U}N \neq 0</math>
+                        </div>
+                        <md-button class="md-primary" @click="hide('s1')" v-show="s1">Close Answer</md-button>
+                    
+                    <h3>麦克斯韦(Maxwell)关系</h3>
+                    <p>
+                        由全微分相关性质，可以由热力学关系式得到麦克斯韦关系：
+                        <math class="ms">
+                            (\frac{\partial T}{\partial V})_S=-(\frac{\partial p}{\partial S})_V
+                        </math>
+                        <math class="ms">
+                            (\frac{\partial T}{\partial p})_S=(\frac{\partial V}{\partial S})_p
+                        </math>
+                        <math class="ms">
+                            (\frac{\partial S}{\partial V})_T=(\frac{\partial p}{\partial T})_V
+                        </math>
+                        <math class="ms">
+                            (\frac{\partial S}{\partial p})_T=-(\frac{\partial V}{\partial T})_p\\
+                        </math>
+                        利用该关系，结合数学技巧，可以将一些难以从实验测量得到的物理量（比如物态方程和热容等），用可测量得到的物理量（比如温度、压力等）表达。<br><br>
+                        <strong>以求取<math inline=1>(\frac{\partial S}{\partial V})_p</math>为例：</strong><br>
+                        熵变无法直接由实验测量得到，因此需要由其他可测量量来导出该偏导。具体过程如下：
+                        <br>由麦克斯韦关系式可得：
+                        <math class="ms">(\frac{\partial S}{\partial V})_p=(\frac{\partial p}{\partial T})_S</math>
+                        由循环关系：
+                        <math class="ms">(\frac{\partial p}{\partial T})_S(\frac{\partial T}{\partial S})_p(\frac{\partial S}{\partial p})_T=-1</math>
+                        其中：
+                        <math class="ms">(\frac{\partial T}{\partial S})_p=\frac T{C_p},\;(\frac {\partial S}{\partial p})_T=-(\frac{\partial V}{\partial T})_p=-V\alpha_p</math>
+                        于是得到：
+                        <math class="ms">(\frac{\partial S}{\partial V})_p=(\frac{\partial p}{\partial T})_S=\frac{C_p}{\alpha_pVT}</math>
+                        如上所示，<math inline=1>(\frac{\partial S}{\partial V})_p</math>由物性及可测量物理量表示出来了。<br>
+                    </p>
+                    <h3>坐标的变换</h3>
+                    <p>
+                        如上所示，通过偏导间的关系，可以将热力学函数用不同的坐标表达，尤其是用可测量的坐标，称为普遍式。<br><br>
+                        <strong>以熵的普遍式为例计算：</strong><br>
+                        以T和V作为自变量，得到微分式：
+                        <math class="ms">dS={\left(\frac{\partial S}{\partial T}\right)}_V\operatorname dT+{\left(\frac{\partial S}{\partial V}\right)}_T\operatorname dV</math>
+                        其中，因为：
+                        <math class="ms">{\left(\frac{\partial U}{\partial T}\right)}_V=T{\left(\frac{\partial S}{\partial T}\right)}_V=C_V</math>
+                        所以：
+                        <math class="ms">{\left(\frac{\partial S}{\partial T}\right)}_V=\frac {C_V}T</math>
+                        又由麦克斯韦关系得到：
+                        <math class="ms">{\left(\frac{\partial p}{\partial T}\right)}_V={\left(\frac{\partial S}{\partial V}\right)}_T</math>
+                        所以熵的表达式：
+                        <math class="ms">\operatorname dS=\frac{C_V}TdT+{\left(\frac{\partial p}{\partial T}\right)}_VdV</math>
+                        同理可以得到以T，p为坐标的表达式：
+                        <math class="ms">\operatorname dS=\frac{C_p}TdT-{\left(\frac{\partial V}{\partial T}\right)}_PdP=\frac {C_p}TdT-\beta Vdp</math>
+                        其中<math inline=1>\beta=\frac 1V\left(\frac {\partial V}{\partial T}\right)_p</math>称为等压热膨胀系数。<br>
+                        同时，由于熵是状态函数即全微分，所以可以得到：
+                        <math class="ms">{\left(\frac{\partial C_V}{\partial V}\right)}_T=T{\left(\frac{\partial^2P}{\partial T^2}\right)}_V</math>
+                        <math class="ms">{\left(\frac{\partial C_P}{\partial P}\right)}_T=-T{\left(\frac{\partial^2V}{\partial T^2}\right)}_P</math>
+                        <br>
+
+                        <strong>内能的普遍式</strong><br>
+                        将以上推导的dS代入<math inline=1>dU=TdS-pdV</math>得到：
+                        <math class="ms">dU=C_VdT+\left[T{\left(\frac{\partial p}{\partial T}\right)}_V-p\right]dV</math>
+
+                        <strong>焓的普遍式</strong><br>
+                        将以上推导的dS代入<math inline=1>dH=TdS+Vdp</math>得到：
+                        <math class="ms">dH=C_PdT+\left[V-T{\left(\frac{\partial V}{\partial T}\right)}_P\right]dp=C_pdT+V(1-\beta T)dp</math>
+                        <strong>热容的普遍式</strong><br>
+                        通过以下两式相减：
+                        <math class="ms">dU=C_VdT+\left[T{\left(\frac{\partial p}{\partial T}\right)}_V-p\right]dV</math>
+                        <math class="ms">dH=C_PdT+\left[V-T{\left(\frac{\partial V}{\partial T}\right)}_P\right]dp</math>
+                        并且考虑有：
+                        <math class="ms">dH-dU=pdV+Vdp</math>
+                        得到：
+                        <math class="ms">C_p-C_V=T{\left(\frac{\partial V}{\partial T}\right)}_p{\left(\frac{\partial p}{\partial T}\right)}_V</math>
+
+                        
+                        
+                        
+                    </p>
+                </div>
+                <md-button class="md-raised md-primary" @click="setDone('fifth','sixth')">OK</md-button>
+            </md-step>
+            <md-step id="sixth" md-label="1.3.5 有外场系统的热力学关系式" md-description ="" :md-done.sync="sixth">
                 <div>
                     <p>
                         复杂系统在课程中几乎没有研究。该部分仅简单介绍。<br>
@@ -144,74 +255,6 @@
                         因此得到：
                         <math>(\frac{\partial F}{\partial T})_{\underline L}>0</math>
                         所以外力减小，温度也下降。
-
-                    </p>
-                </div>
-                <md-button class="md-raised md-primary" @click="setDone('fifth','sixth')">OK</md-button>
-            </md-step>
-            <md-step id="sixth" md-label="1.3.5 偏导" md-description ="麦克斯韦关系" :md-done.sync="sixth">
-                <div>
-                    
-                    <p>
-                        热力学函数的对自变量的一阶偏导可以获得系统状态。例如，对于简单系统：
-                        <math>(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N}=T,\;(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N}=P</math>
-                        二阶偏导可以获得物性。例如对于单组分简单系统，使用强度性质的表达式，得到：<br>
-                        <strong>恒容热容：</strong>
-                        <math>
-                            U_{SS}=(\frac{\partial ^2 U}{\partial S^2})_V=(\frac{\partial T}{\partial S})_V=\frac T{C_V}</math>
-                        <strong>等温压缩因子：</strong>反映等温条件下，系统摩尔体积随压力变化：
-                        <math>
-                            G_{pp}=(\frac{\partial^2 G}{\partial p^2})_T=(\frac{\partial V}{\partial p})_T=-V\kappa_T
-                        </math>
-                        <strong>热膨胀系数：</strong>反应恒压条件下，系统摩尔体积随温度变化：
-                        <math>
-                            G_{Tp}=G_{pT}={\left(\frac{\partial{\left({\displaystyle\frac{\partial G}{\partial p}}\right)}_T}{\partial T}\right)}_p=(\frac{\partial V}{\partial T})_p=V\alpha_p
-                        </math>
-                        <br>
-                        <span class="em">注意：</span>求偏导时要注意是强度性质还是广度性质，并且注意下标；下标不同结果也可能不同。<br><br>
-                        示例：对于单组分简单系统，求以下三个偏导的值：
-                        <math>(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V},\;(\frac{\partial U}{\partial N})_{S,V},\;(\frac{\partial U}{\partial N})_{\underline S,\underline V}</math>
-                    </p>
-                        <md-button class="md-primary" @click="show('s1')">See Answer</md-button><br>
-                        <div v-show="s1">
-                            由<math inline=1>d\underline U=Td\underline S-pd\underline V+ \mu dN</math>得到：
-                            <math>(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V}=\mu</math>
-                            由<math inline=1>dU=TdS-pdV</math>得到：
-                            <math>(\frac{\partial U}{\partial N})_{S,V}=0</math>
-                            又由关系：
-                            <math>\mu=(\frac{\partial \underline U}{\partial N})_{\underline S,\underline V}=(\frac{\partial NU}{\partial N})_{\underline S,\underline V}=U+N(\frac{\partial U}{\partial N})_{\underline S,\underline V}</math>
-                            得到：
-                            <math>(\frac{\partial U}{\partial N})_{\underline S,\underline V}=\frac{\mu-U}N \neq 0</math>
-                        </div>
-                        <md-button class="md-primary" @click="hide('s1')" v-show="s1">Close Answer</md-button>
-                    
-                    <h3>麦克斯韦(Maxwell)关系</h3>
-                    <p>
-                        由全微分相关性质，可以由热力学关系式得到麦克斯韦关系：
-                        <math>
-                            (\frac{\partial T}{\partial V})_S=-(\frac{\partial p}{\partial S})_V
-                        </math>
-                        <math>
-                            (\frac{\partial T}{\partial p})_S=(\frac{\partial V}{\partial S})_p
-                        </math>
-                        <math>
-                            (\frac{\partial S}{\partial V})_T=(\frac{\partial p}{\partial T})_V
-                        </math>
-                        <math>
-                            (\frac{\partial S}{\partial p})_T=-(\frac{\partial V}{\partial T})_p\\
-                        </math>
-                        利用该关系，结合数学技巧，可以将一些难以从实验测量得到的物理量（比如物态方程和热容等），用可测量得到的物理量（比如温度、压力等）表达。<br><br>
-                        <strong>以求取<math inline=1>(\frac{\partial S}{\partial V})_p</math>为例：</strong><br>
-                        熵变无法直接由实验测量得到，因此需要由其他可测量量来导出该偏导。具体过程如下：
-                        <br>由麦克斯韦关系式可得：
-                        <math>(\frac{\partial S}{\partial V})_p=(\frac{\partial p}{\partial T})_S</math>
-                        由循环关系：
-                        <math>(\frac{\partial p}{\partial T})_S(\frac{\partial T}{\partial S})_p(\frac{\partial S}{\partial p})_T=-1</math>
-                        其中：
-                        <math>(\frac{\partial T}{\partial S})_p=\frac T{C_p},\;(\frac {\partial S}{\partial p})_T=-(\frac{\partial V}{\partial T})_p=-V\alpha_p</math>
-                        于是得到：
-                        <math>(\frac{\partial S}{\partial V})_p=(\frac{\partial p}{\partial T})_S=\frac{C_p}{\alpha_pVT}</math>
-                        如上所示，<math inline=1>(\frac{\partial S}{\partial V})_p</math>由物性及可测量物理量表示出来了。
 
                     </p>
                 </div>
@@ -271,8 +314,12 @@
         font-family: sans-serif;
         text-align: justify;
     }
+    .ms{
+        font-size: 12.5px;
+    }
     .lar{
-        font-size: 16.3px;
+        font-size: 15.5px;
+        color:rgb(34, 5, 202);
     }
     .pic{
         max-width:300px;

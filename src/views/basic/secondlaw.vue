@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical>
-            <md-step id="first" md-label="1.2.2 Second Law" md-description ="" :md-done.sync="first">
+            <md-step id="first" md-label="1.2.2 热力学第二定律" md-description ="" :md-done.sync="first">
                 <div>
                     由第二基本假设，孤立系统必然存在且唯一存在一个热力学稳定状态，那么这个状态由什么决定？由第三基本假设，并非所有封闭系统状态变化的过程都是绝热功相互作用过程，那么绝热功相互作用过程和非绝热功相互作用过程有什么差别？第一定律虽然揭示了能量守恒，却没有揭示过程的方向性。<br>
                     卡诺由工程中热机的相关现象提出了卡诺定理，指出<span class="em">热机的最大热效率只和其高温热源和低温热源的温度有关</span>。开尔文等人则由卡诺定理发展出热力学第二定律。因此热力学第二定律建立在实验的基础上。<br>
@@ -246,7 +246,8 @@
         text-align: justify;
     }
     .lar{
-        font-size: 16.5px;
+        font-size: 15.5px;
+        color:rgb(34, 5, 202);
     }
     .pic{
         max-width:320px;

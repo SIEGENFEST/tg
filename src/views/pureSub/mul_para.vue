@@ -55,9 +55,9 @@
                         <strong>Berthelot</strong><br>
                         Berthelot提出，舍项维里方程中，第二维里系数的形式可以为：
                         <math>B=\frac 9{128}\frac{RT_c}{p_c}(1-6\frac{T^2_c}{T^2})</math>
-                        <strong>Pitzer（普遍化式）</strong><br>
+                        <strong>Pitzer（普遍化维里系数方程式）</strong><br>
                         Pitzer提出如下形式的第二维里系数关联式，其中<math inline=1>\omega</math>为偏心因子，是物性。普遍化相关内容可参考2.1.3对比态部分。
-                        <math>\frac{Bp_c}{RT_c}=B^{(0)}+\omegaB^{(1)}</math>
+                        <math>\frac {Bp_c}{RT_c}=B^{(0)}+\omega B^{(1)}</math>
                         <math>B^{(0)}=0.083-\frac{0.422}{T^{1.6}_r}</math>
                         <math>B^{(1)}=0.139-\frac{0.172}{T^{4.2}_r}</math><br>
                         
@@ -164,7 +164,8 @@
         text-align: justify;
     }
     .lar{
-        font-size: 16.5px;
+        font-size: 15.5px;
+        color:rgb(34, 5, 202);
     }
     .pic{
         max-width:300px;

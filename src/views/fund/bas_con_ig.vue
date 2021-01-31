@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical >
-            <md-step id="first" md-label="0.2.2 Ideal Gas" md-description ="" :md-done.sync="first">
+            <md-step id="first" md-label="0.2.2 理想气体" md-description ="" :md-done.sync="first">
                 <p>
                     这部分将介绍理想气体的定义和性质。
                 </p>

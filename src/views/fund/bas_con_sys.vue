@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical >
-            <md-step id="first" md-label="0.2.1 System and Boundary" md-description ="" :md-done.sync="first">
+            <md-step id="first" md-label="0.2.1 系统和边界" md-description ="" :md-done.sync="first">
                 <p>
                     这部分将介绍基本概念，系统和边界。划分系统和边界是进行热力学分析的基础。
                 </p>

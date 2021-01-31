@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical>
-            <md-step id="first" md-label="1.2.1 First Law" md-description ="" :md-done.sync="first">
+            <md-step id="first" md-label="1.2.1 热力学第一定律" md-description ="" :md-done.sync="first">
                 <p>
                     热力学第一定律是关于能量转化的定律，它表明不同形式的能量存在传递与转换，而总能量守恒。本部分将简要介绍运用于封闭系统与开放系统的热力学第一定律，并介绍不同情况下方程的变化。相关例题可以见First Law-Examples部分。
                 </p>

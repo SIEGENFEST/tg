@@ -33,6 +33,9 @@ import Real_gas_intro from './views/pureSub/realgasintro.vue'
 import Mul_para from './views/pureSub/mul_para.vue'
 import Cubic_eq from './views/pureSub/cubic_eq.vue'
 import Pure_g_corre from './views/pureSub/pure_g_corre.vue'
+import Pure_li from './views/pureSub/real_li.vue'
+import Resi_func from './views/pureSub/resi_func.vue'
+import Fuga from './views/pureSub/fugacity.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 import { component } from 'vue/types/umd'
@@ -157,12 +160,27 @@ export const pages: MenuItem[] = [
             name:'2.1.2 Cubic(vdW) EOS',
             component: Cubic_eq,
           },
+          {
+            path:'corre',
+            name:'2.1.3 Corresponding States',
+            component: Pure_g_corre,
+          },
         ],
       },
       {
-        path:'corre',
-        name:'2.1.3.1 Corresponding States',
-        component: Pure_g_corre,
+        path: 'pure-liquid',
+        name:'2.2 Pure Liquid',
+        component:Pure_li,
+      },
+      {
+        path: 'resi-func',
+        name: '2.3 Residual Properties',
+        component: Resi_func,
+      },
+      {
+        path: 'fugacity',
+        name: '2.4 Fugacity',
+        component: Fuga,
       },
     ],
   },

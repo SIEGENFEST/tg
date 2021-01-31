@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical >
-            <md-step id="first" md-label="0.1 Math Fundamentals" md-description ="some math skills needed " :md-done.sync="first">
+            <md-step id="first" md-label="0.1 数学基础" md-description ="some math skills needed " :md-done.sync="first">
                 <p>
                     这部分将简要介绍一些数学技巧，包括微积分基础内容、欧拉定理和勒让德变换。在之后的公式推导中，我们将应用这些内容。
                 </p>

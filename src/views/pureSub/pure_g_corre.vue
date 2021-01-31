@@ -1,17 +1,17 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical >
-            <md-step id="first" md-label="2.1.3.1 Corresponding States" md-description ="对比态原理" :md-done.sync="first">
+            <md-step id="first" md-label="2.1.3 对比态原理" md-description ="" :md-done.sync="first">
                 <p>
-                    对于实际气体，其状态方程与组成成分有关；而对不同成分的气体建立不同状态方程显然不可能，于是人们希望找到一个通用的方程。<br>
-                    实验发现，如果气体的对比体积、对比压力和对比温度中有两个参数相同，则第三个也相同。这就是对比态定律。运用对比态原理，人们能够除去真实气体状态方程中的物质特性常数，从而得到描述的通用式。<br>
-                    同时，该部分也将介绍人们为进一步提高方程精度，对通用式中压缩因子Z进行的相关修正。
+                    对于实际气体，其状态方程参数与组成成分有关；而对不同成分的气体使用不同的状态方程参数显然不方便。于是人们希望找到一个通用的方程。<br>
+                    实验发现，如果<span class="em">气体的对比体积、对比压力和对比温度中有两个参数相同，则第三个也相同。</span>这就是对比态定律。运用对比态原理，人们能够除去真实气体状态方程中的物质特性常数，从而得到描述的通用式。<br>
+                    同时，该部分也简要介绍人们为进一步提高方程精度，对通用式中压缩因子Z进行的相关修正。
                     
                 </p>
 
                 <md-button class="md-raised md-primary" @click="setDone('first','second')">Let's go!</md-button>
             </md-step>
-            <md-step id="second" md-label="对比态原理相关定义" md-description ="临界参数，对比参数" :md-done.sync="second">
+            <md-step id="second" md-label="2.1.3.1 对比态原理相关定义" md-description ="临界参数，对比参数" :md-done.sync="second">
                 <div>
                     <h3>临界参数</h3>
                     <p>
@@ -39,7 +39,7 @@
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('second','third')">OK</md-button>
             </md-step>
-            <md-step id="third" md-label="对比态原理应用" md-description ="求取普遍化方程" :md-done.sync="third">
+            <md-step id="third" md-label="2.1.3.2 对比态原理应用" md-description ="求取普遍化方程" :md-done.sync="third">
                 <div>
                     <p>
                         普遍化方程不含与气体种类相关的常数，仅与对比参数<math inline=1>p_r，T_r，V_r</math>有关，是对任何气体都适用的方程式。
@@ -67,7 +67,7 @@
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('third','fourth')">OK</md-button>
             </md-step>
-            <md-step id="fourth" md-label="改良对比态原理" md-description ="" :md-done.sync="fourth">
+            <md-step id="fourth" md-label="2.1.3.3 改良对比态原理及普遍化压缩因子法" md-description ="双参数、三参数(Pitzer)压缩因子图" :md-done.sync="fourth">
                 <div>
                     <p>
                         为了解决上述问题，人们将临界压缩因子<math inline=1>Z_c</math>与对比参数关联，从而使状态方程普遍化。具体推导过程如下。<br><br>
@@ -80,8 +80,21 @@
                         <math>p_rV_r=\frac{Z}{Z_c}T_r</math>
                         再引入理想对比体积，得到方程：
                         <math class="em">p_rV_{ri}=ZT_r</math>
-                        其中，<math inline=1>Z=Z(p_r,T_r)</math>，所以必然有<math inline=1>V_{ri}=V(p_r,T_r)</math>，即<math inline=1>(p_r,T_r,V_{ri})</math>中仅有两个变量独立。所以方程满足<math inline=1 class="em">f(p_r,T_r,V_{ri})=0</math>，为普遍化方程。<br>
+                        其中，<math inline=1>Z=Z(p_r,T_r)</math>，所以必然有<math inline=1>V_{ri}=V(p_r,T_r)</math>，即<math inline=1>(p_r,T_r,V_{ri})</math>中仅有两个变量独立。所以方程满足<math inline=1 class="em">f(p_r,T_r,V_{ri})=0</math>，为普遍化方程。<br><br>
+                        人们以多种物质得到实验数据，平均后制作出两参数<math inline=1>Z=Z(T_r,p_r)\;</math>普遍化压缩因子图，如下所示：<br>
+                        <img src="../../../public/img/pure/co1.png" alt="" class="piclarge"><br>
+                        <img src="../../../public/img/pure/co2.png" alt="" class="piclarge"><br>
+                        <img src="../../../public/img/pure/co2.png" alt="" class="piclarge"><br>
+                        <small class="sma">（图片来源：高光华 化工热力学[M]. 第3版. 北京: 清华大学出版社, 2017；）</small><br><br>
+                        Pitzer等为提高精确度引入偏心因子<math inline=1>\omega</math>，令<math inline=1>Z=Z^{(0)}+\omega Z^{(1)}</math>，得到三参数<math inline=1>Z=Z(T_r,p_r,\omega)\;</math>压缩因子图：<br>
+                        <img src="../../../public/img/pure/co4.png" alt="" class="pic">
+                        <img src="../../../public/img/pure/co5.png" alt="" class="pic"><br>
+                        <small class="sma">（图片来源：高光华 化工热力学[M]. 第3版. 北京: 清华大学出版社, 2017；）</small><br><br>
                         
+                        注意，以上仅适用于非极性流体。对极性物质的多参数对比态关联法还有待进一步研究。除以上两种修正外还有许多修正方法，此处不介绍。<br><br>
+                        ps. 在2.1.1.4 部分介绍了普遍化维里方程（即Pitzer关联式）；普遍化维里方程和此处介绍的普遍化压缩因子法的适用范围如下所示：<br>
+                        <img src="../../../public/img/pure/co6.png" alt="" class="pic"><br>
+                        <small class="sma">（图片来源：高光华 化工热力学[M]. 第3版. 北京: 清华大学出版社, 2017；）</small>
                     </p>
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('fourth','fifth')">OK</md-button>
@@ -186,6 +199,10 @@
     }
     .wr{
         color: red;
+    }
+    .sma{
+        font-size: 10px;
+        color: grey;
     }
 </style>
 

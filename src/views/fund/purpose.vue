@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical>
-            <md-step id="first" md-label="0.3 Purpose" md-description ="目的和基本思路" :md-done.sync="first">
+            <md-step id="first" md-label="0.3 目的" md-description ="目的和基本思路" :md-done.sync="first">
                 <div>
                     这部分将简要介绍热力学中要解决的问题及研究方法。
                 </div>

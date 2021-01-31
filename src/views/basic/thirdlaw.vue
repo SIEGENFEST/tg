@@ -1,7 +1,7 @@
 <template>
     <div>
         <md-steppers :md-active-step.sync="active" md-vertical>
-            <md-step id="first" md-label="1.2.3 Third Law" md-description ="" :md-done.sync="first">
+            <md-step id="first" md-label="1.2.3 热力学第三定律" md-description ="" :md-done.sync="first">
                 <div>
                     热力学第三定律：<br>
                     绝对零度（0K）时，所有纯物质的完美晶体的熵值为零；绝对零度不可达到。
@@ -66,7 +66,8 @@
         text-align: justify;
     }
     .lar{
-        font-size: 16.5px;
+        font-size: 15.5px;
+        color:rgb(34, 5, 202);
     }
     .pic{
         max-width:300px;

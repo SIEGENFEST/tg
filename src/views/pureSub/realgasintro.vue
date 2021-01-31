@@ -14,6 +14,7 @@
                 2. 多参数状态方程。方程由维里方程衍生，类似于有限项的级数展开式，参数较多。<br>
                 无论哪种状态方程，在<math inline=1>p→0，V→\infty</math>的极限情况下，都应该符合理想气体定律。<br>
                
+               
             </md-content>
     </div>
 </template>
@@ -71,11 +72,13 @@
         font-size: 15px;
         line-height: 27px;
         font-family: sans-serif;
-  
-    
   }
+    .ms{
+        font-size: 13px;
+    }
     .lar{
-        font-size: 16.5px;
+        font-size: 15.5px;
+        color:rgb(34, 5, 202);
     }
     .pic{
         max-width:300px;

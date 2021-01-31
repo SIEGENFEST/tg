@@ -13,8 +13,8 @@
                 <div>
                     <p>
                         范德华认为，真实气体分子间存在引力，施加于器壁的压力比理想气体状态小；分子有体积，气体总体积V包含分子本身的体积；于是修正理想气体方程得到范德华方程，如下所示：
-                        <math>(p+\frac a{V_m^2})(V_m-b)=RT</math>
-                        其中参数a表征分子间引力；参数b称为协体积，表征分子的体积。<br><br>
+                        <math>(p+\frac a{V^2})(V-b)=RT</math>
+                        V表示摩尔体积。方程中参数a表征分子间引力；参数b称为协体积，表征分子的体积。<br><br>
                         <strong class="lar">p-V图像</strong><br>
                         在p和T一定的情况下，上式为关于V的三次方程，因此有三个根（包括虚根和实根）。根据方程绘制得到等温线p-V图像如下所示：<br>
                         <img src="../../../public/img/pure/vdw1.png" alt="" class="piclarge"><br>
@@ -66,11 +66,103 @@
                 <md-button class="md-raised md-primary" @click="setDone('third','fourth')">OK</md-button>
             </md-step>
             <md-step id="fourth" md-label="2.1.2.3 衍生方程" md-description ="RK, SRK, Wilson, PR" :md-done.sync="fourth">
-
+                <div>
+                    <h3>Redlich-Kwong 方程（RK方程）</h3>
+                    <p>
+                        方程形式为：
+                        <math>p=\frac{RT}{V-b}-\frac a{T^{0.5}V(V+b)}</math>
+                        其中V为摩尔体积。方程可以表示为摩尔体积的三次幂形式：
+                        <math>
+                            V^3-\frac{RT}pV^2+(\frac a{T^{0.5}p}-\frac{bRT}p-b^2)V-\frac {ab}{T^{0.5}p}=0
+                        </math>
+                        同样可以用2.1.2.2介绍的方法求得临界参数，此处省略。同理求出理论临界压缩因子，得到：
+                        <math>Z_c=\frac 13</math>
+                        同样是常数，因此RK方程在临界区也不准确。
+                        为了求解方便，将RK方程用压缩因子Z表示为：
+                        <math>Z^3-Z^2+(A-B-B^2)Z-AB=0</math>
+                        其中：
+                        <math>A=0.42748\frac{p_r}{T_r^{2.5}},\;B=0.08664\frac{p_r}{T_r}</math>
+                    </p>
+                    <h3>Wilson 方程</h3>
+                    <p>
+                        RK方程可以改写为：
+                        <math>p=\frac{RT}{V-b}-\frac a{V(V+b)}</math>
+                        其中：
+                        <math>a=a_c\alpha,\;a_c=0.42748\frac{(RT_c)^2}{p_c}</math><br>
+                        <math inline=1>\alpha</math>是温度函数，在原始RK方程中<math inline=1>\alpha=T_r^{-0.5}</math>。<br>
+                        Wilson定义参数<math inline=1>g=g(T_r,\omega)</math>，在偏心因子<math inline=1>\omega</math>一定的情况下g与<math inline=1>\frac 1{T_r}</math>呈线性关系；再将斜率m与ω关联，得到方程：
+                        <math>m=1.57+1.62\omega,\;g=1+m(\frac 1{T_r}-1)</math>
+                        <math>\alpha=gT_r=T_r[1+(1.57+1.62\omega)(T_r^{-1}-1)]</math>
+                        将<math inline=1>\alpha</math>代入原方程即得到Wilson方程。
+                        
+                    </p>
+                    <h3>Soave方程（SRK方程）</h3>
+                    <p>
+                        Soave改进Wilson对RK方程的修正，令：
+                        <math>m=0.480+1.574\omega-0.176\omega^2</math>
+                        <math>\alpha^{0.5}=1+m(1-T_r^{0.5})</math>
+                        得到的SRK方程在计算纯烃和烃类混合物体系的汽-液平衡方面具有较高的精度。<br>
+                        为了求解方便，将SRK方程用压缩因子Z表示为：
+                        <math>Z^3-Z^2+(A-B-B^2)Z-AB=0</math>
+                        <math>A=\frac {\alpha p}{(RT)^2}=0.42748\frac{\alpha p_r}{T_r},\;B=\frac{bp}{RT}=0.08664\frac{p_r}{T_r}</math>
+                    </p>
+                    <h3>Peng-Robinson方程（PR方程）</h3>
+                    <p>
+                        上述RK方程及其修正方程在预测液相密度时精度很差。Peng和Robinson又对Redlich-Kwong方程进行了改进，提出如下PR方程：
+                        <math>p=\frac{RT}{V-b}-\frac a{V(V+b)+b(V-b)}</math>
+                        计算得到理论临界压缩因子：
+                        <math>Z_c=0.307</math>
+                        相比于RK方程，有较明显的改进，但仍和实际流体的真实临界压缩因子有差别。<br>
+                        为求解方便，同样将PR方程用压缩因子表达：
+                        <math>Z^3-(1-B)Z^2+(A-2B-3B^2)Z-(AB-B^2-B^3)=0</math>
+                        其中：
+                        <math>A=\frac{\alpha p}{(RT)^2}=0.457235\frac{\alpha p_r}{T_r^2},\;B=\frac{bp}{RT}=0.077796\frac{p_r}{T_r}</math>
+                        <math>m=0.37646+1.54226ω-0.26992ω^2,\;\alpha^{0.5}=1+m(1-T^{0.5}_r)</math>
+                        Soave方程和Peng-Robinson方程在预测蒸汽压时显示出优点，其重要原因是由于它们有了很好的温度函数α。在预测稠密区的摩尔体积方面，Peng-Robinson方程比Soave方程更优越。
+                    </p>
+                    <h3>多参数立方型方程</h3>
+                    <p>
+                        上述两参数状态方程的局限性的根本原因在于各方程本身所固有的理论临界压缩因子是定值。考虑引入其它参数，使得立方型状态方程的理论临界压缩因子值随物质不同而变化。<br>
+                        Schmidt和Wenzel：<br>
+                        <math>p=\frac {RT}{V-b}-\frac a{V^2+ubV+\omega b^2}</math>
+                        Patel和Teja：<br>
+                        <math>p=\frac {RT}{V-b}-\frac a{V(V+b)+c(V-b)}</math>
+                        童景山和刘裕品：<br>
+                        <math>p=\frac {RT}{V-b}-\frac a{(V+mb)(V-nb)}</math>
+                        多参数状态方程可提高液相计算精度。
+                    </p>
+                </div>
                 <md-button class="md-raised md-primary" @click="setDone('fourth','fifth')">OK</md-button>
             </md-step>
-            <md-step id="fifth" md-label="" md-description ="" :md-done.sync="fifth">
+            <md-step id="fifth" md-label="计算例题" md-description ="" :md-done.sync="fifth">
+                <div>
+                    <p>
+                        <strong>
+                            质量为0.5kg的气态氨，贮于浸没在338.2K的恒温浴的0.03立方米高压容器内，试按下列方法计算气体的压力: <br>
+                            1. 理想气体状态方程；2. SRK方程；3. PR方程。
+                        </strong><br><br>
+                        查得氨的物性数据：
+                        <math>M=17,\;T_c=405.6K,\;p_c=11.28MPa,\;Z_c=0.242,\;\omega=0.250</math>
+                        1. 计算摩尔体积：
+                        <math>V_m=\frac V{m/M}</math>
+                        代入理想气体方程：
+                        <math>p=\frac{RT}{V_m}=2.753MPa</math>
+                        2. <math>b=0.08664\frac{RT_C}{P_C}=0.08664\frac{8.314\times10^6\times405.6}{11.28\times10^6}=25.90</math>
+                        <math>a_c=0.42748\frac{\left(RT_C\right)^2}{P_C}=0.42748\times\frac{\left(8.314\times10^6\times405.6\right)^2}{11.28\times10^6}=4.3095\times10^{11}</math>
+                        <math>m=0.480+1.574\times0.250-0.176\times0.250^2=0.8625</math>
+                        <math>\alpha=\left[1+0.8625\left(1-0.833^{0.5}\right)\right]=1.156</math>
+                        <math>a=a_c\alpha=4.9817\times10^{11}</math>
+                        得到：
+                        <math>p=\frac{8.314\times10^6\times338.15}{1021-25.90}-\frac{4.9817\times10^{11}}{1021\left(1021+25.90\right)}=2.359\times10^3kPa</math>
+                        3. <math>b=0.077796\frac{RT_C}{P_C}=0.077796\times\frac{8.314\times10^{6\times405.6}}{11.28\times10^6}=23.264</math>
+                        <math>a_c=0.45724\frac{\left(RT_C\right)^2}{P_C}=0.45724\times\frac{\left(8.314\times10^6\times405.6\right)^2}{11.28}=4.6095\times10^{11}</math>
+                        <math>m=0.37646+1.54226\times0.25-0.26992\times\left(0.25\right)^2=0.74515</math>
+                        <math>\alpha=\left[1+0.74516\left(1-0.833^{0.5}\right)\right]=1.13435</math>
+                        <math>a=a_c\alpha=5.22875\times10^{11}</math>
+                        得到：<math>p=2.3378\times10^3kPa</math>
 
+                    </p>
+                </div>
                 <md-button class="md-raised md-primary" @click="setDone('fifth','fifth')">OK</md-button>
             </md-step>
 
@@ -128,7 +220,8 @@
         text-align: justify;
     }
     .lar{
-        font-size: 16.5px;
+        font-size: 15.5px;
+        color:rgb(34, 5, 202);
     }
     .pic{
         max-width:300px;
