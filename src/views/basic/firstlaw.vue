@@ -60,7 +60,9 @@
             </md-step>
             <md-step id="fourth" md-label="1.2.1.3 不同情况下方程的变化" md-description ="" :md-done.sync="fourth">
                 <div>
+
                     <p>
+                        一般而言，能量可以划分为动能、势能和内能。而在热力学中，内能主要考虑分子动能（与温度相关）和分子间作用（与分子间距离相关）。<br><br>
                         <strong>对于简单系统：</strong><br><br>
                         没有外场，系统没有动能；可以做出简化：
                         <math>\underline E=\underline U,\;E_{in}=U_{in},\;E_{out}=U_{out}</math>

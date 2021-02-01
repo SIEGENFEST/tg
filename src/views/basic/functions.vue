@@ -115,7 +115,7 @@
                             \underline H=p\underline V+T\underline S+\sum_i\mu_iN_i\\
                             \underline G=-\underline ST+\underline Vp+\sum_i\mu_iN_i
                         </math>
-                        由此，可以在不同坐标下对系统的热力学性质进行描述，并可以通过热力学基本关系式由可测量参数计算不可测量的热力学参数；该部分可参考1.3.5。应尽可能选择可测量的参数来表征研究的系统。
+                        由此，可以在不同坐标下对系统的热力学性质进行描述，并可以通过热力学基本关系式由可测量参数计算不可测量的热力学参数，如1.3.4部分所示。应尽可能选择可测量的参数来表征研究的系统。
 
                     </p>
                 </div>
@@ -123,11 +123,11 @@
             </md-step>
             <md-step id="fifth" md-label="1.3.4 偏导" md-description ="麦克斯韦关系；坐标变换" :md-done.sync="fifth">
                 <div>
-                    <h3>偏导意义</h3>
+                    <h3 class="ti">偏导意义</h3>
                     <p>
                         热力学函数对自变量的一阶偏导可以获得系统状态。<br>
                         例如，对于简单系统：
-                        <math class="ms">(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N}=T,\;(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N}=P</math><br>
+                        <math class="ms">(\frac{\partial \underline U}{\partial \underline S})_{\underline V,N}=T,\;(\frac{\partial \underline U}{\partial \underline V})_{\underline S,N}=p</math><br>
                         二阶偏导可以获得物性。<br>
                         例如对于单组分简单系统，使用强度性质的表达式，得到：<br>
                         <strong>恒容热容：</strong>
@@ -159,7 +159,7 @@
                         </div>
                         <md-button class="md-primary" @click="hide('s1')" v-show="s1">Close Answer</md-button>
                     
-                    <h3>麦克斯韦(Maxwell)关系</h3>
+                    <h3 class="ti">麦克斯韦(Maxwell)关系</h3>
                     <p>
                         由全微分相关性质，可以由热力学关系式得到麦克斯韦关系：
                         <math class="ms">
@@ -187,7 +187,7 @@
                         <math class="ms">(\frac{\partial S}{\partial V})_p=(\frac{\partial p}{\partial T})_S=\frac{C_p}{\alpha_pVT}</math>
                         如上所示，<math inline=1>(\frac{\partial S}{\partial V})_p</math>由物性及可测量物理量表示出来了。<br>
                     </p>
-                    <h3>坐标的变换</h3>
+                    <h3 class="ti">坐标的变换</h3>
                     <p>
                         如上所示，通过偏导间的关系，可以将热力学函数用不同的坐标表达，尤其是用可测量的坐标，称为普遍式。<br><br>
                         <strong>以熵的普遍式为例计算：</strong><br>
@@ -200,23 +200,65 @@
                         又由麦克斯韦关系得到：
                         <math class="ms">{\left(\frac{\partial p}{\partial T}\right)}_V={\left(\frac{\partial S}{\partial V}\right)}_T</math>
                         所以熵的表达式：
-                        <math class="ms">\operatorname dS=\frac{C_V}TdT+{\left(\frac{\partial p}{\partial T}\right)}_VdV</math>
+                        <math class="em ms">\operatorname dS=\frac{C_V}TdT+{\left(\frac{\partial p}{\partial T}\right)}_VdV</math>
                         同理可以得到以T，p为坐标的表达式：
-                        <math class="ms">\operatorname dS=\frac{C_p}TdT-{\left(\frac{\partial V}{\partial T}\right)}_PdP=\frac {C_p}TdT-\beta Vdp</math>
+                        <math class="em ms">\operatorname dS=\frac{C_p}TdT-{\left(\frac{\partial V}{\partial T}\right)}_pdp=\frac {C_p}TdT-\beta Vdp</math>
                         其中<math inline=1>\beta=\frac 1V\left(\frac {\partial V}{\partial T}\right)_p</math>称为等压热膨胀系数。<br>
                         同时，由于熵是状态函数即全微分，所以可以得到：
-                        <math class="ms">{\left(\frac{\partial C_V}{\partial V}\right)}_T=T{\left(\frac{\partial^2P}{\partial T^2}\right)}_V</math>
-                        <math class="ms">{\left(\frac{\partial C_P}{\partial P}\right)}_T=-T{\left(\frac{\partial^2V}{\partial T^2}\right)}_P</math>
+                        <math class="ms">{\left(\frac{\partial C_V}{\partial V}\right)}_T=T{\left(\frac{\partial^2p}{\partial T^2}\right)}_V</math>
+                        <math class="ms">{\left(\frac{\partial C_p}{\partial p}\right)}_T=-T{\left(\frac{\partial^2V}{\partial T^2}\right)}_p</math>
                         <br>
 
                         <strong>内能的普遍式</strong><br>
                         将以上推导的dS代入<math inline=1>dU=TdS-pdV</math>得到：
                         <math class="ms">dU=C_VdT+\left[T{\left(\frac{\partial p}{\partial T}\right)}_V-p\right]dV</math>
-
+                        <math class="ms">dU=\left[C_p-p\left(\frac {\partial V}{\partial T}\right)_p\right] dT-\left[T\left(\frac {\partial V}{\partial T}\right)_p+p\left(\frac {\partial V}{\partial p}\right)_T\right]dp</math>
+                    </p>
+                    <md-button class="md-primary sma" @click="show('s1')">U=U(T,p)推导过程</md-button>
+                    <div v-show="s1">
+                        <p>
+                            将dS代入得到：
+                            <math>dU=C_pdT-T\left(\frac {\partial V}{\partial T}\right)_pdp-pdV</math>
+                            p一定对T偏导：
+                            <math>\left(\frac {\partial U}{\partial T}\right)_p=C_p-p\left(\frac {\partial V}{\partial T}\right)_p</math>
+                            T一定对p偏导：
+                            <math>\left(\frac {\partial U}{\partial p}\right)_T=-T\left(\frac {\partial V}{\partial T}\right)_p-p\left(\frac {\partial V}{\partial p}\right)_T</math>
+                            代入:
+                            <math>dU=\left(\frac {\partial U}{\partial p}\right)_Tdp+\left(\frac {\partial U}{\partial T}\right)_pdT</math>即可得到结果。
+                        </p>
+                        <md-button class="md-primary sma" @click="hide('s1')">close</md-button><br>
+                    </div>
+                    <br>
+                    <p>
+                        
                         <strong>焓的普遍式</strong><br>
                         将以上推导的dS代入<math inline=1>dH=TdS+Vdp</math>得到：
-                        <math class="ms">dH=C_PdT+\left[V-T{\left(\frac{\partial V}{\partial T}\right)}_P\right]dp=C_pdT+V(1-\beta T)dp</math>
-                        <strong>热容的普遍式</strong><br>
+                        <math class="ms">dH=C_PdT+\left[V-T{\left(\frac{\partial V}{\partial T}\right)}_p\right]dp=C_pdT+V(1-\beta T)dp</math>
+                    </p>
+                    <md-button class="md-primary sma" @click="show('s2')">something interesting</md-button>
+                    <div v-show="s2">
+                        <p>
+                            一些联想：<br>
+                            1. 将理想气体状态方程pV=RT代入可以发现：
+                            <math class="ms">\left(\frac {\partial U}{\partial p}\right)_T=-T\left(\frac {\partial V}{\partial T}\right)_p-p\left(\frac {\partial V}{\partial p}\right)_T=0</math>
+                            即验证了理想气体内能只与温度有关。<br><br>    
+                            2. 孤立系统中理想气体自由扩散，因为分子间无引力所以内能不变，温度不变，不做功不吸热。（因为热力学函数计算式只适用于平衡态间的计算，所以自由扩散过程的内能变化无法由这些方程计算；只能由非平衡热力学或者微观状态获得。）<br><br>
+                            3. 孤立系统中真实气体自由扩散。扩散后，分子间相互作用势能减小，但孤立系统内能守恒（可视为分子间相互作用势能+分子动能），所以温度应该会上升，使分子动能上升。<br><br>
+                            4. 等焓下气体膨胀，即为节流过程。
+                            <math class="ms">\mu \equiv \left(\frac {\partial T}{\partial p}\right)_H=-\left(\frac {\partial T}{\partial H}\right)_p\left(\frac {\partial H}{\partial p}\right)_T=-\frac 1{C_p}\left[V-T\left(\frac {\partial V}{\partial T}\right)_p\right]</math>
+                            方程表示节流前后的两个平衡态下，流体温度可能上升可能下降，与温度、压力、流体种类有关。<br><br>
+                            5. 承接3，想象真实气体在一个活塞内，无摩擦，外侧是真空；以气体和活塞为系统，整个过程中能量不会耗散到系统外部。为方便想象，令活塞有质量m。<br>
+                            因为有了活塞这一个“平面”，拔掉固定物后，在两侧的压差下活塞有了速度。于是在运动过程中，气体分子间势能的减小可以转化为活塞的动能，气体温度可能下降。当活塞撞上一段距离外固定物后，无能量损失回弹；这段来回运动的过程省略，最终状态下活塞静止。此时，活塞的动能完全返回给气体，相当于3的情况；因此气体温度相比初态应该会上升。<br>
+                            以上过程能量转化上应该相当于将流体的焓转变为动能再转变为热。<br><br>
+                            同理，即使抵抗外压绝热做功，如果外压不够高，真实气体虽然内能下降，温度却不一定会下降。仿照节流过程计算，可以得到前后两个平衡态温度随压力的变化：
+                            <math>\left(\frac {\partial T}{\partial p}\right)_U=-\left(\frac {\partial T}{\partial U}\right)_p\left(\frac {\partial U}{\partial p}\right)_T=\frac 1{C_p-p\left(\frac {\partial V}{\partial T}\right)_p}\left[T\left(\frac {\partial V}{\partial T}\right)_p+p\left(\frac {\partial V}{\partial p}\right)_T\right]</math>
+                            而理想气体绝热做功温度必然下降。<br><br>
+                        </p>
+                        <md-button class="md-primary sma" @click="hide('s2')">They're boring, close</md-button><br>
+                        <br>
+                    </div>
+                    <p>
+                        <strong>热容关系的普遍式</strong><br>
                         通过以下两式相减：
                         <math class="ms">dU=C_VdT+\left[T{\left(\frac{\partial p}{\partial T}\right)}_V-p\right]dV</math>
                         <math class="ms">dH=C_PdT+\left[V-T{\left(\frac{\partial V}{\partial T}\right)}_P\right]dp</math>
@@ -239,8 +281,8 @@
                         在有外场的情况下，热力学关系式为：
                         <math>d\underline U=d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i+\overrightarrow Fd\underline{\overrightarrow X}</math>
                         <math inline=1>\overrightarrow F</math>为外场强度；<math inline=1>\underline{\overrightarrow X}</math>为系统在外场作用下的位移。例如，系统为磁性材料，则<math inline=1>\overrightarrow F=-\overrightarrow H</math>，表示磁场强度；<math inline=1>\underline{\overrightarrow X}=\underline{\overrightarrow B}</math>，表示材料磁矩。<br><br>
-                        示例：<br>
                         <strong>
+                        示例：<br>
                         将一个弹性材料展开后突然松手。在松手瞬间，材料的温度升高还是降低？</strong><br><br>
                         列出热力学关系式：
                         <math>d\underline U=d\underline U=Td\underline S-pd\underline V+\sum_i \mu_i dN_i+\overrightarrow Fd\underline{\overrightarrow L}</math>
@@ -317,8 +359,8 @@
     .ms{
         font-size: 12.5px;
     }
-    .lar{
-        font-size: 15.5px;
+    h3{
+        font-size: 17px;
         color:rgb(34, 5, 202);
     }
     .pic{
