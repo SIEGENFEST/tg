@@ -218,13 +218,13 @@
                     <div v-show="s1">
                         <p>
                             将dS代入得到：
-                            <math>dU=C_pdT-T\left(\frac {\partial V}{\partial T}\right)_pdp-pdV</math>
+                            <math class="ms">dU=C_pdT-T\left(\frac {\partial V}{\partial T}\right)_pdp-pdV</math>
                             p一定对T偏导：
-                            <math>\left(\frac {\partial U}{\partial T}\right)_p=C_p-p\left(\frac {\partial V}{\partial T}\right)_p</math>
+                            <math class="ms">\left(\frac {\partial U}{\partial T}\right)_p=C_p-p\left(\frac {\partial V}{\partial T}\right)_p</math>
                             T一定对p偏导：
-                            <math>\left(\frac {\partial U}{\partial p}\right)_T=-T\left(\frac {\partial V}{\partial T}\right)_p-p\left(\frac {\partial V}{\partial p}\right)_T</math>
+                            <math class="ms">\left(\frac {\partial U}{\partial p}\right)_T=-T\left(\frac {\partial V}{\partial T}\right)_p-p\left(\frac {\partial V}{\partial p}\right)_T</math>
                             代入:
-                            <math>dU=\left(\frac {\partial U}{\partial p}\right)_Tdp+\left(\frac {\partial U}{\partial T}\right)_pdT</math>即可得到结果。
+                            <math class="ms">dU=\left(\frac {\partial U}{\partial p}\right)_Tdp+\left(\frac {\partial U}{\partial T}\right)_pdT</math>即可得到结果。
                         </p>
                         <md-button class="md-primary sma" @click="hide('s1')">close</md-button><br>
                     </div>
@@ -238,7 +238,7 @@
                     <md-button class="md-primary sma" @click="show('s2')">something interesting</md-button>
                     <div v-show="s2">
                         <p>
-                            一些联想：<br>
+                            一些联想（不保证完全正确）：<br>
                             1. 将理想气体状态方程pV=RT代入可以发现：
                             <math class="ms">\left(\frac {\partial U}{\partial p}\right)_T=-T\left(\frac {\partial V}{\partial T}\right)_p-p\left(\frac {\partial V}{\partial p}\right)_T=0</math>
                             即验证了理想气体内能只与温度有关。<br><br>    
@@ -248,13 +248,14 @@
                             <math class="ms">\mu \equiv \left(\frac {\partial T}{\partial p}\right)_H=-\left(\frac {\partial T}{\partial H}\right)_p\left(\frac {\partial H}{\partial p}\right)_T=-\frac 1{C_p}\left[V-T\left(\frac {\partial V}{\partial T}\right)_p\right]</math>
                             方程表示节流前后的两个平衡态下，流体温度可能上升可能下降，与温度、压力、流体种类有关。<br><br>
                             5. 承接3，想象真实气体在一个活塞内，无摩擦，外侧是真空；以气体和活塞为系统，整个过程中能量不会耗散到系统外部。为方便想象，令活塞有质量m。<br>
-                            因为有了活塞这一个“平面”，拔掉固定物后，在两侧的压差下活塞有了速度。于是在运动过程中，气体分子间势能的减小可以转化为活塞的动能，气体温度可能下降。当活塞撞上一段距离外固定物后，无能量损失回弹；这段来回运动的过程省略，最终状态下活塞静止。此时，活塞的动能完全返回给气体，相当于3的情况；因此气体温度相比初态应该会上升。<br>
+                            因为有了活塞这一个“平面”，拔掉固定物后，在两侧的压差下活塞有了速度。于是在运动过程中，气体分子间势能的减小可以转化为活塞的动能，气体温度可能下降。当活塞撞上一段距离外的固定物后，无能量损失回弹；这段来回运动的过程省略，最终状态下活塞静止。此时，活塞的动能完全返回给气体，相当于3的情况；因此气体温度相比初态应该会上升。<br>
                             以上过程能量转化上应该相当于将流体的焓转变为动能再转变为热。<br><br>
-                            同理，即使抵抗外压绝热做功，如果外压不够高，真实气体虽然内能下降，温度却不一定会下降。仿照节流过程计算，可以得到前后两个平衡态温度随压力的变化：
+                            同理，即使抵抗外压绝热做功，如果外压不够高，真实气体虽然内能下降，温度却不一定会下降。仿照节流过程计算，可以得到前后平衡态温度随压力的变化：
                             <math>\left(\frac {\partial T}{\partial p}\right)_U=-\left(\frac {\partial T}{\partial U}\right)_p\left(\frac {\partial U}{\partial p}\right)_T=\frac 1{C_p-p\left(\frac {\partial V}{\partial T}\right)_p}\left[T\left(\frac {\partial V}{\partial T}\right)_p+p\left(\frac {\partial V}{\partial p}\right)_T\right]</math>
-                            而理想气体绝热做功温度必然下降。<br><br>
+
+                            而理想气体绝热做功温度必然下降。<br>
                         </p>
-                        <md-button class="md-primary sma" @click="hide('s2')">They're boring, close</md-button><br>
+                        <md-button class="md-primary sma" @click="hide('s2')">no fun, close</md-button><br>
                         <br>
                     </div>
                     <p>

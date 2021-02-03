@@ -104,8 +104,10 @@
                         <math class="ms">\frac{\triangle S_T'}R=-\frac1R\int_{p_0}^p\left(\frac{\partial\alpha}{\partial T}\right)_pdp</math>
                         2. 用压缩因子表示：
                         <math class="ms">\frac{\triangle S_T'}R=\int_{p_0}^p\left[\left(Z-1\right)+T\left(\frac{\partial Z}{\partial T}\right)_p\right]\frac{dp}p</math>
+                        计算方法与剩余焓相同。<br>
                         3. 用状态方程表示（以RK为例）：
                         <math class="ms">\frac{\triangle S_T'}R=\frac12\frac{A^2}B\ln\left(1+\frac{Bp}Z\right)-\ln\left(Z-Bp\right)</math>
+                        同样可以通过查找熵差图得到结果，此处省略。
                     </p>
                     <h3>计算状态变化</h3>
                     <p>

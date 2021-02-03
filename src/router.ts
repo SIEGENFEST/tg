@@ -37,6 +37,9 @@ import Pure_li from './views/pureSub/real_li.vue'
 import Resi_func from './views/pureSub/resi_func.vue'
 import Fuga from './views/pureSub/fugacity.vue'
 
+import Mix_exc from './views/mix/mix_exc.vue'
+import Mg_rule from './views/mix/mg_rule.vue'
+
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 import { component } from 'vue/types/umd'
 // import LocalTest from './views/LocalTest.vue'
@@ -181,6 +184,29 @@ export const pages: MenuItem[] = [
         path: 'fugacity',
         name: '2.4 Fugacity',
         component: Fuga,
+      },
+    ],
+  },
+  {
+    icon:'mixture',
+    path:'mix',
+    name:'3 Mixture',
+    children:[
+      {
+        path:'mix-exc',
+        name:'3.1 Mixing Functions, Excess Functions',
+        component: Mix_exc,
+      },
+      {
+        path:'m-gas',
+        name:'3.2 Gas Mixture',
+        children:[
+          {
+            path:'m-rule',
+            name:'3.2.1 Mixing Rules',
+            component: Mg_rule,
+          },
+        ],
       },
     ],
   },
