@@ -147,6 +147,10 @@
         font-family: sans-serif;
         text-align: justify;
     }
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
+    }
     .lar{
         font-size: 15.5px;
         color:rgb(34, 5, 202);

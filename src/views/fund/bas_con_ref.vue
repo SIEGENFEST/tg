@@ -70,6 +70,10 @@
         font-family: sans-serif;
         text-align: justify;
     }
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
+    }
     .pic{
         max-width:300px;
     }

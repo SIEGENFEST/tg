@@ -23,12 +23,13 @@
                         假设研究对象是理想气体，可以得到：
                         <math >\mu=\mu^0+RTln\frac p{p_0}</math>
                         而实际气体的状态方程与理想气体不同；为表示差异，将以上方程修正为：
-                        <math>\mu=\mu^0+RTln\frac f{f^0}</math>
+                        <math class="em">\mu=\mu^0+RTln\frac f{f^0}</math>
                         其中f 是实际气体逸度，<math inline=1>f^0</math>是同温度 <math inline=1>p_0=1bar\;</math>下的逸度。逸度单位与压力单位相同，可视为“校正压力”或“有效压力”。<br>
                         当 <math inline=1>p\rightarrow 0</math> 时，气体状态趋近于理想气体，因此有 <math inline=1>f\rightarrow p</math>。
                         其实在一定压力范围下（一般低于15bar)，就可以认为<math inline=1>f=p</math>。<br>
                         因此在<math inline=1>p^0=1bar</math>下，气体可视为理想，<math inline=1>f^0=p_0=1bar</math>。所以一般省略<math inline=1>f^0</math>，得到：
-                        <math>\mu=\mu^0+RTlnf</math>
+                        <math class="em">RT\ln f=\mu-\mu^0</math>
+                        
                     </p>
                     <h3>逸度系数</h3>
                     <p>
@@ -38,12 +39,12 @@
                         <math>\mu^{real}(T,p)=\mu^{ig}(T,p_0)+RT\ln \frac f{p^0}</math>
                         <math>\mu^{ig}(T,p)=\mu^{ig}(T,p_0)+RT\ln \frac p{p^0}</math>
                         因此：
-                        <math>\mu^{real}(T,p)=\mu^{ig}(T,p)+RT\ln \phi</math>
+                        <math class="em">RT\ln \phi=\mu^{real}(T,p)-\mu^{ig}(T,p)</math>
                     </p>
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('second','third')">OK</md-button>
             </md-step>
-            <md-step id="third" md-label="2.4.2 计算逸度系数" md-description ="" :md-done.sync="third">
+            <md-step id="third" md-label="2.4.2 计算逸度系数" md-description ="压缩因子法、状态方程法" :md-done.sync="third">
                 <div>
                     <p>
                         由定义可以得到，逸度可以表示为：
@@ -59,7 +60,7 @@
                         <math inline=1>f^0=p_0</math>，上式变化得到：
                         <math>\ln \phi =\ln\frac fp=-\int_{p_0}^p\frac{1-Z}pdp</math>
                         普遍化，得到：
-                        <math>\ln \phi =\ln\frac fp=-\int_{p_{r,0}}^{p_r}\frac{1-Z}{p_r}d{p_r}</math>
+                        <math>\ln \phi=-\int_{p_{r,0}}^{p_r}\frac{1-Z}{p_r}d{p_r}</math>
                         两参数法，<math inline=1>Z=Z(T,p_r),\;\phi =\phi (T,p_r)</math>，得到下图：<br>
                         <img src="../../../public/img/pure/fu1.png" alt="" class="piclarge"><br><br>
                         三参数法：
@@ -181,6 +182,10 @@
         line-height: 27px;
         font-family: sans-serif;
         text-align: justify;
+    }
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
     }
     .lar{
         font-size: 15.5px;

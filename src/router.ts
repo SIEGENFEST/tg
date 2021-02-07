@@ -39,6 +39,13 @@ import Fuga from './views/pureSub/fugacity.vue'
 
 import Mix_exc from './views/mix/mix_exc.vue'
 import Mg_rule from './views/mix/mg_rule.vue'
+import Mg_fu from './views/mix/mg_fu.vue'
+import Id_so from './views/mix/ideal_s.vue'
+import Act from './views/mix/act.vue'
+import Act_mo from './views/mix/act_mo.vue'
+import Act_app from './views/mix/act_app.vue'
+
+import Sta_cri from './views/equi/sta_cri.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 import { component } from 'vue/types/umd'
@@ -48,13 +55,13 @@ Vue.use(Router);
 
 export const pages: MenuItem[] = [
   {
-    icon: 'favicon',
+    // icon: 'favicon',
     path: '',
     name: 'Home',
     component: Home
   },
   {
-    icon:'pure',
+    // icon:'pure',
     name: '0 Fundamentals',
     path: 'fund',
     children:[
@@ -97,7 +104,7 @@ export const pages: MenuItem[] = [
     ],
   },
   {
-    icon: 'intro',
+    // icon: 'intro',
     name: '1 Basics',
     path: 'basics',
     children:[
@@ -140,7 +147,7 @@ export const pages: MenuItem[] = [
     ],
   },
   {
-    icon: 'pure',
+    // icon: 'pure',
     name: '2 Pure Substance',
     path: 'pu-sub',
     children:[
@@ -188,7 +195,7 @@ export const pages: MenuItem[] = [
     ],
   },
   {
-    icon:'mixture',
+    // icon:'mixture',
     path:'mix',
     name:'3 Mixture',
     children:[
@@ -206,90 +213,78 @@ export const pages: MenuItem[] = [
             name:'3.2.1 Mixing Rules',
             component: Mg_rule,
           },
+          {
+            path:'mg-fu',
+            name:'3.2.2 Fugacity',
+            component:Mg_fu,
+          },
+        ],
+      },
+      {
+        path:'id-so',
+        name:'3.3 Ideal Solution',
+        component:Id_so,
+      },
+      {
+        path:'li-mix',
+        name:'3.4 Liquid Mixture',
+        children:[
+          {
+            path:'act',
+            name:'3.4.1 Activity',
+            component:Act,
+          },
+          {
+            path:'act-mo',
+            name:'3.4.2 Activity Coefficient Model',
+            component:Act_mo,
+          },
+          {
+            path:'act-cal',
+            name:'3.4.3 Application',
+            component:Act_app,
+          },
         ],
       },
     ],
   },
   {
-    icon: 'pure',
-    name: 'Pure substance',
-    path: 'pure-substance',
-    children: [
+    // icon:'mixture',
+    path:'phase-equi',
+    name:'4 Phase Equilibrium',
+    children:[
       {
-        children: [
-          {
-            path: 'eos-intro',
-            name: 'Introduction of EOS',
-            component: IntroEOS,
-          },
-          {
-            path: 'eos-id-vdw-rk',
-            name: 'Cubic EOS',
-            component: EOS_ID_VDW_RK,
-          },
-          {
-            path: 'virial-eos',
-            name: 'Virial EOS',
-            component: VirialEOS,
-          },
-          {
-            icon: 'blub',
-            path: 'calculation-example',
-            name: 'Calculation Example',
-            component: HowToCalculate,
-          },
-          {
-            icon: 'gas',
-            path: 'eos-diagram',
-            name: 'EOS Diagram',
-            component: EOS_Diagram,
-          }],
-        icon: 'gas',
-        path: 'eos',
-        name: "EOS"
+        name:'4.1 Stability',
+        path:'sta',
+        component:Sta_cri,
+      },
+    ],
+  },
+  {
+    // icon:'calc',
+    name:'5 Calculator',
+    path:'calcu',
+    children:
+    [
+      {
+        path:'pure-gram',
+        name:'5.1 EOS Diagram (vdW, ideal gas)',
+        component: EOS_Diagram,
       },
       {
-        icon: 'flame',
-        path: 'entropy-and-enthalpy',
-        name: 'Entropy & Enthalpy',
-        component: Entropy,
-      },
-      {
-        icon: 'intro',
-        path: 'fugacity',
-        name: 'Fugacity theory',
-        component: Fugacity,
-
-      },
-      {
-        icon: 'calc',
-        path: 'calculator',
-        name: 'Calculator',
+        path:'calcu',
+        name:'5.2 Pure Gas Calculator',
         component: EOS_Calc,
-      }
-    ]
-  },
-  {
-    icon: 'mixure',
-    path: 'mixture',
-    name: 'Mixture',
-    children: [
-      {
-        icon: 'blub',
-        path: 'phase-equ-example',
-        name: 'Phase Equilibrium Example',
-        component: PhaseEquilibriumExample,
       },
       {
-        icon: 'calc',
-        path: 'mixture-calc',
-        name: 'Mixture Calculator',
+        path:'mix-cal',
+        name:'5.3 Mixture Calculator',
         component: Mixture_Calculator,
-      }
-    ]
+      },
+    ],
   },
   {
-    icon: 'smile',
+    // icon: 'smile',
     path: 'about-us',
     name: 'About Us',
     component: AboutUs,
@@ -314,14 +309,14 @@ export default new Router({routes: parsePageConfig(pages)})
 
 
 export interface ParentMenu {
-  icon?: string
+  icon: string
   name: string
   path: string
   children: MenuItem[]
 }
 
 export interface SubMenu  {
-  icon?: string
+  icon: string
 }
 
 export declare type MenuItem = (ParentMenu | SubMenu | RouteConfig)

@@ -4,7 +4,7 @@
             <md-step id="first" md-label="2.3 剩余性质" md-description ="" :md-done.sync="first">
                 <div>
                     <p>
-                        剩余性质又称为偏离函数(Departure Function)，是以同温同压下的理想气体状态为参考态所得到的真实流体的状态函数，可以表示出流体在非理想状态下和理想气体状态的差异。使用剩余性质可以较为方便地计算真实流体的热力学性质。
+                        剩余性质又称为偏离函数(Departure Function)，是以<span class="em">同温同压下的理想气体状态为参考态</span>所得到的真实流体的状态函数，可以表示出流体在非理想状态下和理想气体状态的差异。使用剩余性质可以较为方便地计算真实流体的热力学性质。
                     </p>
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('first','second')">Let's go!</md-button>
@@ -240,6 +240,10 @@
         line-height: 27px;
         font-family: sans-serif;
         text-align: justify;
+    }
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
     }
     .lar{
         font-size: 15.5px;

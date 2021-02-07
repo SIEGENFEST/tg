@@ -63,9 +63,10 @@
                         <math class="ms">\triangle G_i=\triangle H_i-T\triangle S_i  </math>
                         容易发现：
                         <math class="ms">\triangle M(T,p,\{x\})=M(T,p,\{x\})-\sum_ix_iM_i(T,p)=\sum_ix_i\left(\overline M_i-M_i\right) </math>
-                        <math class="ms em">\left(\frac {\partial \triangle G_{mix}}{\partial n_i}\right)_{T,p,n_{j\neq i}}=\frac {\partial}{\partial n_i}\left(G_t(T,p,\{n\})-\sum_i n_i\mu_i(T,p)\right)_{T,p,n_{j\neq i}}=\mu_i(T,p,\{x\})-\mu_i(T,p) </math>
+                        <math class="ms em">\left(\frac {\partial \triangle G_{t}}{\partial n_i}\right)_{T,p,n_{j\neq i}}=\frac {\partial}{\partial n_i}\left(G_t(T,p,\{n\})-\sum_i n_i\mu_i(T,p)\right)_{T,p,n_{j\neq i}}=\mu_i(T,p,\{x\})-\mu_i(T,p) </math>
                     </p>
-                </div><md-button class="md-primary" @click="show('s2')">something interesting</md-button><br>
+                </div>
+                <md-button class="md-primary" @click="show('s2')">something interesting</md-button><br>
                     <div v-show="s2">
                         <p>
                             1. 偏摩尔量是<span class="em">总性质</span>对摩尔量求导，且<math inline=1>n_j</math>视为常量。通常有表达式<math inline=1>M=(T,p,x_i)</math>，要将<math inline=1>x_i</math>用<math inline=1>x_i= {n_i}/{\sum n_i}</math>替换，乘以总摩尔数n后再求偏导；或者按“偏摩尔性质”部分标红的方程求取。<br><br>
@@ -131,19 +132,18 @@
             <md-step id="fourth" md-label="3.1.3 超额函数" md-description ="" :md-done.sync="fourth">
                 <div>
                     <p>
-                        理想混合物的具体介绍见3.3.1理想混合物部分，此处直接使用。
+                        理想混合物的具体介绍见3.3理想混合物部分，此处直接使用。
                     </p> 
                     <h3>超额函数</h3>
                     <p>
                         
                         超额性质是实际混合物的热力学性质在同温同压同组成下，与理想混合物的差：
                         <math class="ms">M^E=M(T,p,\{x\})-M^{id}(T,p,\{x\})</math>
-                        超额性质的变化，“超额混合函数”：
+                        超额性质的变化表示为：
                         <math class="ms">\triangle M^E(T,p,\{x\})=\triangle M(T,p,\{x\})-\triangle M^{id}(T,p,\{x\})</math>
                         结合混合函数的内容，容易得到：
                         <math class="ms">\triangle M^E=\triangle M-\triangle M^{id}= M-\sum_i x_iM_i-\left(M^{id}-\sum_ix_iM_i\right)=M-M^{id}=M^E</math>
-                        即超额性质的变化等于超额性质，因此：
-                        <math class="ms">\triangle M^E(T,p,\{x\})=M(T,p,\{x\})-\sum_ix_iM_i(T,p,\{x\})</math>
+                        即超额性质的变化等于超额性质。
                     </p>
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('fourth','fourth')">OK</md-button>
@@ -201,9 +201,9 @@
         font-family: sans-serif;
         text-align: justify;
     }
-    .lar{
-        font-size: 15.5px;
-        color:rgb(34, 5, 202);
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
     }
     .ms{
         font-size: 13px;

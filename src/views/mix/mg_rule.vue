@@ -9,7 +9,7 @@
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('first','second')">Let's go!</md-button>
             </md-step>
-            <md-step id="second" md-label="3.2.2 Amagat定律，Dalton定律" md-description ="" :md-done.sync="second">
+            <md-step id="second" md-label="3.2.1.1 Amagat定律，Dalton定律" md-description ="" :md-done.sync="second">
                 <h3>Amagat定律</h3>
                 <p>
                     该定律认为，混合气体体积等于各气体在压力p下的体积之和：
@@ -41,7 +41,7 @@
 
                 <md-button class="md-raised md-primary" @click="setDone('second','third')">OK</md-button>
             </md-step>
-            <md-step id="third" md-label="3.2.3 vdW混合规则" md-description ="" :md-done.sync="third">
+            <md-step id="third" md-label="3.2.1.2 vdW混合规则" md-description ="" :md-done.sync="third">
                 <div>
                     <p>
                         状态方程通常是针对纯物质的，拓展应用到混合物需要混合规则。此处仅对未改进的van der Waals混合规则做简单介绍。<br>
@@ -109,9 +109,9 @@
         font-family: sans-serif;
         text-align: justify;
     }
-    .lar{
-        font-size: 15.5px;
-        color:rgb(34, 5, 202);
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
     }
     .ms{
         font-size: 13px;

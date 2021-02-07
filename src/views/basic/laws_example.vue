@@ -267,6 +267,10 @@
         font-family: sans-serif;
         text-align: justify;
     }
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
+    }
     .pic{
         max-width:300px;
     }
@@ -290,6 +294,7 @@
         font-size: 15px;
         float: left;
         width: auto;
+        cursor: pointer;
     }
     .bu2{
         border: 0px;
@@ -299,6 +304,7 @@
         font-size: 18px;
         float: left;
         width: auto;
+        cursor: pointer;
     }
 </style>
 

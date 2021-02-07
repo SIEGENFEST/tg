@@ -69,6 +69,10 @@
         font-size: 15.5px;
         color:rgb(34, 5, 202);
     }
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
+    }
     .pic{
         max-width:300px;
     }
