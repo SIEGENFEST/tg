@@ -46,6 +46,7 @@ import Act_mo from './views/mix/act_mo.vue'
 import Act_app from './views/mix/act_app.vue'
 
 import Sta_cri from './views/equi/sta_cri.vue'
+import Phadia from './views/equi/pha_dia.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 import { component } from 'vue/types/umd'
@@ -258,6 +259,11 @@ export const pages: MenuItem[] = [
         path:'sta',
         component:Sta_cri,
       },
+      {
+        name:'4.2 Phase Diagram',
+        path:'pha-dia',
+        component:Phadia,
+      },
     ],
   },
   {
@@ -305,18 +311,20 @@ export const pages: MenuItem[] = [
 // const routes: RouteConfig[] = [];
 
 
-export default new Router({routes: parsePageConfig(pages)})
+export default new Router({
+  routes: parsePageConfig(pages),
+})
 
 
 export interface ParentMenu {
-  icon: string
+  icon?: string
   name: string
   path: string
   children: MenuItem[]
 }
 
 export interface SubMenu  {
-  icon: string
+  icon?: string
 }
 
 export declare type MenuItem = (ParentMenu | SubMenu | RouteConfig)

@@ -17,7 +17,7 @@
                     <h3>性质</h3>
                     <p>
                         理想气体混合物中，每一种组分都不会因为其他气体的存在而受到影响，即每一种组分气体都独立起作用，所以对总压的贡献与它单独占据总体积时相同。
-                        因此理想气体混合物中，任意组分B都满足：<span class="em"><math>p_B=x_Bp</math></span>
+                        因此理想气体混合物中，任意组分B都满足：<span class="em" id='gas'><math>p_B=x_Bp</math></span>
                         该定律称为Dalton分压定律。<br><br>
                         注意：<br>
                         1. Dalton分压定律只适用于理想气体混合物，对实际气体混合物不适用。<br>
@@ -30,7 +30,7 @@
                 <div>
                     <h3>理想溶液定义</h3>
                     <p>
-                        溶液中每个组分都服从Lewis-Randall（路易斯-伦达尔）规则的溶液。<br>双组分理想溶液的p-x图如下所示：
+                        溶液中<span class="em" id="liq">每个组分都服从Lewis-Randall（路易斯-伦达尔）规则</span>的溶液。<br>双组分理想溶液的p-x图如下所示：
                     </p>
                     <img src="../../../public/img/fund/b_c_is.png" alt="" class="pic">
                     <h3>理想溶液微观特征</h3>
@@ -114,7 +114,7 @@
             first: false,
             second: false,
             sh: false,
-            
+            sk:'first',
         }),
         methods: {
             setDone(id, index) {
@@ -129,7 +129,24 @@
             hide(){
                 this.sh=false;
             },
+        },
+        mounted: function () {
+        var _this=this;
+        var hash = window.location.hash;
+        var index = hash.lastIndexOf("#");
+        var sk=hash.lastIndexOf('#', index - 1);
+        if ((index != -1) &&(sk >0)) {
+        var id = hash.substring(index + 1, hash.length + 1);
+        var act=hash.substring(sk+ 1, index);
+        _this.active=act;
+        var div = document.getElementById(id);
+        if (div) {
+            this.$nextTick(() => {
+            div.scrollIntoView();
+            });
         }
+        }
+    },
     })
  </script>
 

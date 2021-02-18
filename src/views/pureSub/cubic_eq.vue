@@ -1,6 +1,6 @@
 <template>
     <div>
-        <md-steppers :md-active-step.sync="active" md-vertical>
+        <md-steppers :md-active-step.sync="active" md-vertical >
             <md-step id="first" md-label="2.1.2 立方型状态方程" md-description ="" :md-done.sync="first">
                 <div>
                     <p>
@@ -9,7 +9,7 @@
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('first','second')">Let's go!</md-button>
             </md-step>
-            <md-step id="second" md-label="2.1.2.1 van der Waals方程及图像" md-description ="" :md-done.sync="second">
+            <md-step id="second" md-label="2.1.2.1 van der Waals方程及图像" md-description ="" :md-done.sync="second" >
                 <div>
                     <p>
                         范德华认为，真实气体分子间存在引力，施加于器壁的压力比理想气体状态小；分子有体积，气体总体积V包含分子本身的体积；于是修正理想气体方程得到范德华方程，如下所示：
@@ -22,7 +22,7 @@
                         范德华方程是第一个能从气态到液态连续表达的状态方程。图像中，AC线由不同温度下饱和液相体积连接而成，其左侧为液相；CG线由不同温度下饱和气相体积连接而成，其右侧为气相；ACG中间部分表示气液平衡。<br><br>
 
                         由图像可以看出：<br>
-                        <math inline=1>T_c>T,p_1>p>p_3\;</math>时，方程有三个实根A,E,G。其中A表示该温度下饱和液相体积，G点表示饱和汽相体积，而E没有物理意义。同时，在<math inline=1>p_1,p_3</math>之间的等温线<math inline=1>(\partial p/\partial V)_T>0</math>，与真实流体的行为违背且不符合稳定性条件（见平衡与稳定部分），不可能存在；而AD、FG部分是亚稳态，可以存在但不稳定。<br>
+                        <math inline=1>T_c>T,p_1>p>p_3\;</math>时，方程有三个实根A,E,G。其中A表示该温度下<span class="em">饱和液相体积</span>，G点表示<span class="em">饱和汽相体积</span>，而E没有物理意义。同时，在<math inline=1>p_1,p_3</math>之间的等温线<math inline=1>(\partial p/\partial V)_T>0</math>，与真实流体的行为违背且不符合<router-link :to="{path:'../../phase-equi/sta?#third#lix'}">稳定性条件</router-link>，不可能存在；而AD、FG部分是亚稳态，可以存在但不稳定。<br>
                         随温度升高，三个实根逐渐接近；三个根合并时，即达到临界点<math inline=1>T=T_c</math>，此时体积为临界体积<math inline=1>V_c</math>。临界温度是物质的特性参数。临界点以上温度，流体仅有气相没有液相。<br><br>
                         
                         
@@ -32,7 +32,7 @@
                         <math inline=1>T_c>T,\;p=p_2\;</math>时，流体气液相平衡；<br>
                         <math inline=1>T_c>T,\;p\neq p_2\;</math>时，方程有一个实根两个虚根，流体为单相，状态可以确定;<br>
                         <math inline=1>T>T_c\;</math>时，流体仅有气相。<br><br>
-                        <strong>ps.</strong> 曲线ADEFG被AG分成的上下两个部分ADE和EFG面积相等，称为"Maxwell Construction"。假设气体沿着ADEFG可逆变化到G，再沿着直线GA可逆变化到A。这是一个循环，所以总体而言没有热转化为功（否则就从单一热源取热违反热二定律）；又因为A点和G点的 T、p 相等，所以内能相等。所以总过程做功为0，即上下两部分面积相等。<br>
+                        <strong id='maxwc'>ps.</strong> 曲线ADEFG被AG分成的上下两个部分ADE和EFG面积相等，称为"<span class="em">Maxwell Construction</span>"。假设气体沿着ADEFG可逆变化到G，再沿着直线GA可逆变化到A。这是一个循环，所以总体而言没有热转化为功（否则就从单一热源取热违反热二定律）；又因为A点和G点的 T、p 相等，所以内能相等。所以总过程做功为0，即上下两部分面积相等。<br>
                         <strong>pps.</strong> A点、G点代表的流体饱和气液相体积可以通过实验获得，也可以运用 Maxwell Construction 进行理论计算。RK方程等其它理论方程也可以这样计算饱和流体气液相体积。
                     </p>
                 </div>
@@ -188,7 +188,7 @@
             r: 0,
             s1: false,
             s2: false,
-            
+            sk:'first',
         }),
         methods: {
             setDone(id, index) {
@@ -207,7 +207,24 @@
             hide:function(t){
                 this[t]=false;
             },
-        }
+        },
+        mounted: function () {
+            var _this=this;
+            var hash = window.location.hash;
+            var index = hash.lastIndexOf("#");
+            var sk=hash.lastIndexOf('#', index - 1);
+            if ((index != -1) &&(sk >0)) {
+            var id = hash.substring(index + 1, hash.length + 1);
+            var act=hash.substring(sk+ 1, index);
+            _this.active=act;
+            var div = document.getElementById(id);
+            if (div) {
+                this.$nextTick(() => {
+                div.scrollIntoView();
+                });
+            }
+            }
+        },
     })
  </script>
 
