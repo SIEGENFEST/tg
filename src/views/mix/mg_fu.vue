@@ -22,7 +22,8 @@
                 <div>
                     <p>
                         纯物质i的逸度和逸度系数：
-                        <math>RT\ln \frac {f_i}{f^0}=\mu_i(T,p) -\mu_i(T,p^0)\;,\;\phi_i=\frac{f_i}p</math>
+                        <math>RT\ln \frac {f_i}{f^0}=\mu_i(T,p) -\mu_i(T,p^0)</math>
+                        <math>\phi_i=\frac{f_i}p</math>
                         在温度一定的情况下，微分得到：
                         <math>dG_i=RTd\ln f_i</math>
                         <br>
@@ -30,7 +31,7 @@
                     <h3>混合物总逸度</h3>
                     <p>
                         与纯物质逸度相似，得到混合物总的逸度和逸度系数：
-                        <math >RT\ln\frac{f_m}{f^0_m}=\mu_m(T,p)-\mu_m(T,p^0)\;,\;\phi_m=\frac {f_m}p</math>
+                        <math >RT\ln\frac{f_m}{f^0_m}=\mu_m(T,p)-\mu_m(T,p^0)\;\;\; ,\;\;\;\phi_m=\frac {f_m}p</math>
                         其中<math inline=1>f^0_m=p^0=1bar</math>；相当于将T,p0(ideal gas)下的混合物当做假想的“纯净物”作为参比态。<br><br>
                     </p>
                     <h3>混合物分逸度</h3>
@@ -40,7 +41,7 @@
                         相当于将T,p0(ideal gas)下的纯物质作为参比态。在温度一定的情况下，微分得到：
                         <math>d\overline G_i=RTd\ln \widehat f_i</math>
                         气相混合物中，组分i逸度系数的定义为：
-                        <math>\widehat\phi_i \equiv \frac {\widehat f_i}{py_i}</math>
+                        <math class="em" id="gasf">\widehat\phi_i \equiv \frac {\widehat f_i}{py_i}</math>
                         
                         同样，对于液相混合物有：
                         <math>\widehat\phi^L_i = \frac {\widehat f^L_i}{px_i}</math>
@@ -87,9 +88,9 @@
                     <p>
                         
                         同温度同组分下：
-                        <math class="ms">RTd\ln \widehat f_i=\overline V_idp\;,\;\widehat\phi_i=\frac {\widehat f_i}{py_i} </math>
+                        <math class="ms">RTd\ln \widehat f_i=\overline V_idp\;\;\; ,\;\;\;\widehat\phi_i=\frac {\widehat f_i}{py_i} </math>
                         于是得到：
-                        <math class="ms">\ln\widehat\phi_i=\int^p_{p_0}(\overline Z_i-1)\frac {dp}p\;,\;RTln\widehat\phi_i=\int^p_{p_0}\left[\left(\frac {\partial V_t}{\partial n_i}\right)_{T,p,{n_{j\neq i}}}-\frac {RT}p \right]dp</math>
+                        <math class="ms">\ln\widehat\phi_i=\int^p_{p_0}(\overline Z_i-1)\frac {dp}p\;\;\; ,\;\;\;RTln\widehat\phi_i=\int^p_{p_0}\left[\left(\frac {\partial V_t}{\partial n_i}\right)_{T,p,{n_{j\neq i}}}-\frac {RT}p \right]dp</math>
                         <math class="ms">RT\ln\widehat \phi_i=\int_{V_t}^\infty\left[\left(\frac{\partial p}{\partial n_i}\right)_{T,V_t,n_j}-\frac{RT}{V_t}\right]dV_t-RT\ln Z_m</math>
                         
                     </p>
@@ -163,7 +164,7 @@
             r: 0,
             s1: false,
             s2: false,
-            
+            sk:'first',
         }),
         methods: {
             setDone(id, index) {
@@ -183,7 +184,24 @@
             hide:function(t){
                 this[t]=false;
             },
-        }
+        },
+        mounted: function () {
+            var _this=this;
+            var hash = window.location.hash;
+            var index = hash.lastIndexOf("#");
+            var sk=hash.lastIndexOf('#', index - 1);
+            if ((index != -1) &&(sk >0)) {
+            var id = hash.substring(index + 1, hash.length + 1);
+            var act=hash.substring(sk+ 1, index);
+            _this.active=act;
+            var div = document.getElementById(id);
+            if (div) {
+                this.$nextTick(() => {
+                div.scrollIntoView();
+                });
+            }
+            }
+        },
     })
  </script>
 

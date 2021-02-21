@@ -87,7 +87,7 @@
                             同时，高密度下，由于分子间引力，分子有形成分子集团的趋向；而一个分子集团的行为相当于一个分子，所以实质上可以认为气体内实际粒子数减少而表观分子质量增大。由此，Beattie等提出摩尔气体常数修正式：
                             <math>R'=R(1-\frac{c\rho}{T^n})</math>
                             Beattie和Bridgeman研究发现，对于许多气体，n=3时能够最好地拟合。<br>
-                            而对于内压<math inilne=1>p_i</math>，要考虑分子间作用力的影响。Lorentz找到了合适的公式表示内压：
+                            而对于内压<math inline=1>p_i</math>，要考虑分子间作用力的影响。Lorentz找到了合适的公式表示内压：
                             <math>p_i=A_0\rho^2(1-a\rho)</math>
                             将以上公式代入<math inline=1>p=p_{th}-p_i</math>，即可得到BB方程。<br>
                         </p>

@@ -13,17 +13,17 @@
                 <div>
                     <p>
                         对于单组分封闭系统：
-                        <math >dG=d\mu=-SdT+Vdp</math> <br>
+                        <math class="ms">dG=d\mu=-SdT+Vdp</math> <br>
                         因此恒温下：
-                        <math >\mu-\mu^0=G-G^0=\int^p_{p_0}Vdp</math>
+                        <math  class="ms" id="vdp">\mu-\mu^0=G-G^0=\int^p_{p_0}Vdp</math>
                         其中<math inline=1>\mu^0</math>是<math inline=1>p_0</math>（一般为1bar/atm）下理想气体状态的化学势。<br>
                     </p>
                     <h3>逸度</h3>
                     <p>
                         假设研究对象是理想气体，可以得到：
-                        <math >\mu=\mu^0+RTln\frac p{p_0}</math>
+                        <math  class="ms">\mu=\mu^0+RTln\frac p{p_0}</math>
                         而实际气体的状态方程与理想气体不同；为表示差异，将以上方程修正为：
-                        <math class="em">\mu=\mu^0+RTln\frac f{f^0}</math>
+                        <math class="ms em">\mu=\mu^0+RTln\frac f{f^0}</math>
                         其中f 是实际气体逸度，<math inline=1>f^0</math>是同温度 <math inline=1>p_0=1bar\;</math>下的逸度。逸度单位与压力单位相同，可视为“校正压力”或“有效压力”。<br>
                         当 <math inline=1>p\rightarrow 0</math> 时，气体状态趋近于理想气体，因此有 <math inline=1>f\rightarrow p</math>。
                         其实在一定压力范围下（一般低于15bar)，就可以认为<math inline=1>f=p</math>。<br>
@@ -34,12 +34,12 @@
                     <h3>逸度系数</h3>
                     <p>
                         定义逸度系数：
-                        <math> \phi \equiv \frac fp</math> 
+                        <math class="ms"> \phi \equiv \frac fp</math> 
                         容易得到如下方程：
-                        <math>\mu^{real}(T,p)=\mu^{ig}(T,p_0)+RT\ln \frac f{p^0}</math>
-                        <math>\mu^{ig}(T,p)=\mu^{ig}(T,p_0)+RT\ln \frac p{p^0}</math>
+                        <math class="ms">\mu^{real}(T,p)=\mu^{ig}(T,p_0)+RT\ln \frac f{p^0}</math>
+                        <math class="ms">\mu^{ig}(T,p)=\mu^{ig}(T,p_0)+RT\ln \frac p{p^0}</math>
                         因此：
-                        <math class="em">RT\ln \phi=\mu^{real}(T,p)-\mu^{ig}(T,p)</math>
+                        <math class="ms em" id="yd">RT\ln \phi=\mu^{real}(T,p)-\mu^{ig}(T,p)</math>
                     </p>
                 </div>
                 <md-button class="md-raised md-primary" @click="setDone('second','third')">OK</md-button>
@@ -48,23 +48,23 @@
                 <div>
                     <p>
                         由定义可以得到，逸度可以表示为：
-                        <math>ln\frac f{f^0}=\mu-\mu^0=\int^p_{p_0}Vdp</math>
+                        <math class="ms">ln\frac f{f^0}=\mu-\mu^0=\int^p_{p_0}Vdp</math>
                         而逸度系数<math inline=1>\phi=\frac fp</math>，因此求取逸度系数需要获得V和p的关系。可以通过压缩因子或者状态方程计算。
                     </p>
                     <h3>压缩因子法计算</h3>
                     <p>
                         与2.1.3.3部分介绍的方法相似。由方程 <math inline=1>pV=ZRT</math> 可以得到：
-                        <math>\ln\frac f{f^0}=\int_{p_0}^p\frac{Zdp}p</math>
+                        <math class="ms">\ln\frac f{f^0}=\int_{p_0}^p\frac{Zdp}p</math>
                         <math inline=1>p_0</math> 趋近0时，上式积分困难，因此改写为：
-                        <math>\ln\frac f{f^0}=\int_{p_0}^p\frac{dp}p-\int_{p_0}^p\frac{1-Z}pdp</math>
+                        <math class="ms">\ln\frac f{f^0}=\int_{p_0}^p\frac{dp}p-\int_{p_0}^p\frac{1-Z}pdp</math>
                         <math inline=1>f^0=p_0</math>，上式变化得到：
-                        <math>\ln \phi =\ln\frac fp=-\int_{p_0}^p\frac{1-Z}pdp</math>
+                        <math class="ms">\ln \phi =\ln\frac fp=-\int_{p_0}^p\frac{1-Z}pdp</math>
                         普遍化，得到：
-                        <math>\ln \phi=-\int_{p_{r,0}}^{p_r}\frac{1-Z}{p_r}d{p_r}</math>
+                        <math class="ms">\ln \phi=-\int_{p_{r,0}}^{p_r}\frac{1-Z}{p_r}d{p_r}</math>
                         两参数法，<math inline=1>Z=Z(T,p_r),\;\phi =\phi (T,p_r)</math>，得到下图：<br>
                         <img src="../../../public/img/pure/fu1.png" alt="" class="piclarge"><br><br>
                         三参数法：
-                        <math>\phi =\phi (T,p_r,\omega),\;\lg\phi=\lg \phi^{(0)}+\omega \lg\phi^{(1)}</math>
+                        <math class="ms">\phi =\phi (T,p_r,\omega),\;\lg\phi=\lg \phi^{(0)}+\omega \lg\phi^{(1)}</math>
                         其中 <math inline=1>\lg \phi^{(0)},\;\lg\phi^{(1)}</math> 分别是简单流体的逸度系数和校正项，可以查教材附录得到。
                     </p>
                     <h3>状态方程计算</h3>
@@ -152,7 +152,7 @@
             r: 0,
             s1: false,
             s2: false,
-            
+            sk:'first',
         }),
         methods: {
             setDone(id, index) {
@@ -171,7 +171,24 @@
             hide:function(t){
                 this[t]=false;
             },
+        },
+        mounted: function () {
+        var _this=this;
+        var hash = window.location.hash;
+        var index = hash.lastIndexOf("#");
+        var sk=hash.lastIndexOf('#', index - 1);
+        if ((index != -1) &&(sk >0)) {
+        var id = hash.substring(index + 1, hash.length + 1);
+        var act=hash.substring(sk+ 1, index);
+        _this.active=act;
+        var div = document.getElementById(id);
+        if (div) {
+            this.$nextTick(() => {
+            div.scrollIntoView();
+            });
         }
+        }
+    },
     })
  </script>
 

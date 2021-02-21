@@ -127,7 +127,24 @@
             hide:function(t){
                 this[t]=false;
             },
-        }
+        },
+        mounted: function () {
+            var _this=this;
+            var hash = window.location.hash;
+            var index = hash.lastIndexOf("#");
+            var sk=hash.lastIndexOf('#', index - 1);
+            if ((index != -1) &&(sk >0)) {
+            var id = hash.substring(index + 1, hash.length + 1);
+            var act=hash.substring(sk+ 1, index);
+            _this.active=act;
+            var div = document.getElementById(id);
+            if (div) {
+                this.$nextTick(() => {
+                div.scrollIntoView();
+                });
+            }
+            }
+        },
     })
  </script>
 

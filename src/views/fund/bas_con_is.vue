@@ -66,7 +66,7 @@
                     <p>
                         溶液中，溶质和溶剂分别服从Henry定律和Raoult定律，则该溶液为理想稀溶液。
                     </p>
-                    <h3>Henry定律</h3>
+                    <h3 id="henry">Henry定律</h3>
                     <p>
                         一定温度下，稀溶液中溶质的蒸汽分压与摩尔分数成正比，即：
                         <math>p_B=k_Bx_B</math>

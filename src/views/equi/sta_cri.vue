@@ -45,7 +45,7 @@
                             <math class="ms">RT\ln\widehat f_i=\mu_i\left(T,p,\left\{x\right\}\right)-\mu_i^0\left(T,p^0\right)</math>
                             <math class="ms">RT\ln\widehat f_i^\alpha=\mu_i^\alpha\left(T,p,\left\{x\right\}\right)-\mu_i^0\left(T,p^0\right)</math>
                             <math class="ms">RT\ln\left(\widehat f_i^\alpha/\widehat f_i^\beta\right)=\mu_i^\alpha\left(T,p,\left\{x\right\}\right)-\mu_i^\beta\left(T,p,\left\{x\right\}\right)=0\;\;\;\Rightarrow\;\;\; \widehat f_i^\alpha=\widehat f_i^\beta</math>
-                            <math class="ms em">\widehat f_i^\alpha=\widehat f_i^\beta=...=\widehat f_i^p\left(i=1,2,...,C\right)</math>
+                            <math class="ms em" id="yidu">\widehat f_i^\alpha=\widehat f_i^\beta=...=\widehat f_i^p\left(i=1,2,...,C\right)</math>
                         </p>
                         <h3>相平衡推论</h3>
                         <p>
@@ -73,15 +73,16 @@
                         <math class="ms"></math>
                         已经知道，一个封闭系统的内能可以表示为熵、体积和摩尔量的函数，其微分为：
                         <math class="ms">\operatorname d\underline U=T\operatorname d\underline S-p\operatorname d\underline V+\sum_i\mu_i\operatorname d N_i </math>
-                        将微分代入稳定性的数学表示，得到稳定条件的热力学描述：
+                        对于一元体系，将微分代入稳定性的数学表示，得到稳定条件的热力学描述：
                         <math class="ms">\left(\frac{\partial^2U}{\partial S^2}\right)_{V,N}>0\;\;\;\Rightarrow\;\;\;\left(\frac{\partial T}{\partial S}\right)_{V,N}>0\;\;\;\Rightarrow\;\;\;\frac T{NC_V}>0</math>
                         得到<span class="em">热稳定性</span>判据：
                         <math class="ms em">\frac T{C_V}>0</math>
                         同理可以得到<span class="em" id="lix">力学稳定性</span>判据：
                         <math class="ms em">\left(\frac{\partial^2A}{\partial V^2}\right)_{T,N}>0\;\;\;\Rightarrow\;\;\;0>\left(\frac{\partial p}{\partial\underline V}\right)_T</math>
                         <math class="ms em">\left(\frac{\partial^2H}{\partial S^2}\right)_{p,N}>0\;\;\;\Rightarrow\;\;\;\frac T{C_p}>0</math>
-                        力学稳定性比热稳定性充分。即满足力学稳定性包含满足热稳定性。
-                        <math class="ms"></math>
+                        力学稳定性比热稳定性充分。即满足力学稳定性包含满足热稳定性。<br><br>
+                        对于二元体系，其稳定判据为：
+                        <math class="ms" id="ery">\left(\frac {\partial^2 G}{\partial N_1^2}\right)_{T,p,N_2}>0\;\;\Rightarrow\;\; \left(\frac {\partial^2 G}{\partial x_i^2}\right)_{T,p}>0</math>
                         <math class="ms"></math>
                     </p>
                     <h3>临界点</h3>

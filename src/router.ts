@@ -47,10 +47,13 @@ import Act_app from './views/mix/act_app.vue'
 
 import Sta_cri from './views/equi/sta_cri.vue'
 import Phadia from './views/equi/pha_dia.vue'
+import Li_gas from './views/equi/li_gas.vue'
+import Other_eq from './views/equi/other_eq.vue'
 
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 import { component } from 'vue/types/umd'
 // import LocalTest from './views/LocalTest.vue'
+import Te from './views/te.vue'
 
 Vue.use(Router);
 
@@ -60,6 +63,11 @@ export const pages: MenuItem[] = [
     path: '',
     name: 'Home',
     component: Home
+  },
+  {
+    path:'te',
+    name:'Te',
+    component:Te,
   },
   {
     // icon:'pure',
@@ -263,6 +271,16 @@ export const pages: MenuItem[] = [
         name:'4.2 Phase Diagram',
         path:'pha-dia',
         component:Phadia,
+      },
+      {
+        name:'4.3 Liquid-Gas Equilibrium',
+        path:'li-gas',
+        component:Li_gas,
+      },
+      {
+        name:'4.4 Other Equilibrium',
+        path:'oth-eq',
+        component:Other_eq,
       },
     ],
   },

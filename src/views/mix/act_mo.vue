@@ -144,7 +144,7 @@
                         </p>
                         <md-button class="md-primary" :md-ripple="false" @click="hide('woh')">close</md-button>
                     </div>
-                    <br><br><button class="bu" @click="show('wil')">Wilson方程</button>
+                    <br><br><button class="bu" @click="show('wil')" id="wil">Wilson方程</button>
                     <div v-show="wil">
                         <p>
                             <strong>适用范围：</strong><br>
@@ -353,7 +353,24 @@
             hide:function(t){
                 this[t]=false;
             },
+        },
+        mounted: function () {
+        var _this=this;
+        var hash = window.location.hash;
+        var index = hash.lastIndexOf("#");
+        var sk=hash.lastIndexOf('#', index - 1);
+        if ((index != -1) &&(sk >0)) {
+        var id = hash.substring(index + 1, hash.length + 1);
+        var act=hash.substring(sk+ 1, index);
+        _this.active=act;
+        var div = document.getElementById(id);
+        if (div) {
+            this.$nextTick(() => {
+            div.scrollIntoView();
+            });
         }
+        }
+    },
     })
  </script>
 

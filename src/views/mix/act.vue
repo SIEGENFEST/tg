@@ -29,8 +29,11 @@
                     <p>
                         活度系数定义：
                         <math class="ms">\gamma_i\equiv \frac {a_i}{x_i}</math>
-                        活度系数可以描述实际溶液的非理想行为：<br>
-                        <math inline=1>\gamma_i{>}1</math>，<math inline=1>\widehat f^L_i(T,p,\{x\}){>}x_if^L_i(T,p)</math>，组分i易挥发，为正偏差的非理想溶液；<br>
+                        与化学势关系：
+                        <math class="ms em" id="gamma">RT\ln{x_i\gamma_i}=RT\ln{a_i}=\mu_i(T,p,\{x\})-\mu_i(T,p)</math><br>
+                        活度系数可以描述实际溶液的非理想行为。<br>
+                        对于正偏差的非理想溶液，组分i易挥发，可表示为：
+                        <math class="ms">\gamma_i\;{>}\;1</math><math class="ms">\widehat f^L_i(T,p,\{x\})\;{>}\;x_if^L_i(T,p)</math>
                         反之，则组分i不易挥发，为负偏差的非理想溶液。
 
                     </p>
@@ -107,7 +110,7 @@
             r: 0,
             s1: false,
             s2: false,
-            
+            sk:'first',
         }),
         methods: {
             setDone(id, index) {
@@ -127,7 +130,24 @@
             hide:function(t){
                 this[t]=false;
             },
+        },
+        mounted: function () {
+        var _this=this;
+        var hash = window.location.hash;
+        var index = hash.lastIndexOf("#");
+        var sk=hash.lastIndexOf('#', index - 1);
+        if ((index != -1) &&(sk >0)) {
+        var id = hash.substring(index + 1, hash.length + 1);
+        var act=hash.substring(sk+ 1, index);
+        _this.active=act;
+        var div = document.getElementById(id);
+        if (div) {
+            this.$nextTick(() => {
+            div.scrollIntoView();
+            });
         }
+        }
+    },
     })
  </script>
 

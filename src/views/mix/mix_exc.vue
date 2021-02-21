@@ -117,7 +117,7 @@
                         温度压力一定，得到常用的简化方程：
                         <math class="ms em">\sum \left(x_id\overline M_i\right)=0</math>
                     </p>
-                    <h3>一致性判据</h3>
+                    <h3 id="yzx">一致性判据</h3>
                     <p>
                         一致性判据用于判断实验获得的数据是否合理，在相平衡气液平衡部分将进一步说明。此处简要介绍GD方程导出的一致性判据。<br>
                         以二元体系为例。根据一般形式的GD方程，在一定的温度和压力下有：
@@ -171,6 +171,7 @@
             s1: false,
             s2: false,
             s3: false,
+            sk:'first',
         }),
         methods: {
             setDone(id, index) {
@@ -189,7 +190,24 @@
             hide:function(t){
                 this[t]=false;
             },
+        },
+        mounted: function () {
+        var _this=this;
+        var hash = window.location.hash;
+        var index = hash.lastIndexOf("#");
+        var sk=hash.lastIndexOf('#', index - 1);
+        if ((index != -1) &&(sk >0)) {
+        var id = hash.substring(index + 1, hash.length + 1);
+        var act=hash.substring(sk+ 1, index);
+        _this.active=act;
+        var div = document.getElementById(id);
+        if (div) {
+            this.$nextTick(() => {
+            div.scrollIntoView();
+            });
         }
+        }
+    },
     })
  </script>
 
