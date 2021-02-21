@@ -7,7 +7,6 @@
       Click the Maxwell monster to open the menu!
     </p>
     <object style="border:0px" data="./test.html" width="8000px" height="6000px"></object>
-    <iframe name="content_frame" marginwidth=0 marginheight=0 width=100% height=30 src="./test.html" frameborder=0></iframe>
   </div>
 </template>
 

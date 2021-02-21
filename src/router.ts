@@ -2,15 +2,8 @@ import Vue from 'vue'
 import Router, {RouteConfig} from 'vue-router'
 import Home from './views/Home.vue'
 // import PhaseDiagram from './components/PhaseDiagram.vue'
-import IntroEOS from './views/IntroEOS.vue'
-import EOS_ID_VDW_RK from './views/EOS-ID-VDW-RK.vue'
-import VirialEOS from './views/VirialEOS.vue'
-import HowToCalculate from './views/HowToCalculate.vue'
 import EOS_Calc from './views/EOS_Calculator.vue'
 import EOS_Diagram from './views/EOS_Diagram.vue'
-import Entropy from './views/Entropy&Enthalpy.vue'
-import Fugacity from './views/Fugacity_theory.vue'
-import PhaseEquilibriumExample from './views/PhaseEquilibriumExample.vue'
 import Mixture_Calculator from "@/views/Mixture_Calculator.vue";
 import Mixture_Diagram from "@/views/Mixture_Diagram.vue";
 import AboutUs from './views/AboutUs.vue'
@@ -53,7 +46,6 @@ import Other_eq from './views/equi/other_eq.vue'
 import {parsePageConfig} from './lib/ObjectAnalysingUtil'
 import { component } from 'vue/types/umd'
 // import LocalTest from './views/LocalTest.vue'
-import Te from './views/te.vue'
 
 Vue.use(Router);
 
@@ -63,11 +55,6 @@ export const pages: MenuItem[] = [
     path: '',
     name: 'Home',
     component: Home
-  },
-  {
-    path:'te',
-    name:'Te',
-    component:Te,
   },
   {
     // icon:'pure',

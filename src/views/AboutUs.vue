@@ -1,12 +1,16 @@
 <template>
   <div>
     <div align="center">
-      <img src="../../public/img/app.png" height="462" width="566"/>
+      <h3>七字班</h3>
+      <img src="../../public/img/app.png" class="piclarge"/>
+      <h3>八字班</h3>
+      <p>
+        郑祎霖<br>
+        zhengyl18@mails.tsinghua.edu.cn <br><br>
+        范以薇<br>
+        fan-yw18@mails.tsinghua.edu.cn
+      </p>
     </div>
-    <audio autoplay>
-      <source src="../../public/audio/hehe.mp3" type="audio/mp3">
-      您的浏览器不支持 audio 元素。
-    </audio>
   </div>
 </template>
 
@@ -18,5 +22,18 @@
 </script>
 
 <style scoped>
-
+    div{
+        max-width: 700px;
+        font-size: 15px;
+        line-height: 27px;
+        font-family: sans-serif;
+        text-align: justify;
+    }
+    h3{
+        font-size: 16.5px;
+        color:rgb(32, 8, 165);
+    }
+    .piclarge{
+        max-width: 550px;
+    }
 </style>

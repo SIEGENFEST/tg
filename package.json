@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "cytoscape": "^3.18.0",
     "d3": "^5.14.2",
+    "echarts": "latest",
     "fade": "^0.2.0",
     "material-icons": "^0.3.1",
     "mathjax-node": "^2.1.1",
@@ -33,8 +35,7 @@
     "vue-material": "^1.0.0-beta-15",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.2.0",
-    "vue-slider-component": "^3.0.43",
-    "echarts": "latest"
+    "vue-slider-component": "^3.0.43"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.7.4",
